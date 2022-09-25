@@ -1,11 +1,11 @@
 export const Color = {
-    Dark: "#30303d",
-    Blue: "#5564a0",
-    Cyan: "#61b7ac",
-    White: "#ede4da",
-    Yellow: "#f7b33d",
-    Red: "#ea6e48",
-    Green: "#818747",
+    White: "#FFFFFF",
+    Yellow: "#F7C300",
+    Blue: "#519DD9",
+    BlueGreen: "#53BAC1",
+    Red: "#DB0038",
+    LightGrey: "#EDEDED",
+    DarkGrey: "#393939",
     
 };
 
