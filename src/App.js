@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
-import Button from "./Components/Button.js"
-import Color from './Components/Constants';
-import Box from "./Components/Box.js"
-import Text from "./Components/Text.js"
-import Input from "./Components/Input.js"
-import Spacing from './Components/Spacing';
+import * as React from "react";
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Register from './Components/Pages/Register';
+import Home from './Components/Pages/Home';
 
 function App() {
   return ( <>
-    <Box color = {Color.Blue}><Text>dogbook</Text></Box>
-    <Box>
-    <Spacing height = {"1em"}></Spacing>
-      <Input placeholder='Username...'></Input>
-      <Spacing height = {"15px"}></Spacing>
-      <Input placeholder='Password...'></Input>
-      <Spacing height = {"1em"}></Spacing>
-      <Button color = {Color.BlueGreen}>Log in</Button>
-      <Button>Register</Button>
-    </Box>
+  <Router>
+      <Switch>
+        <Route exact path = "/">
+          <Home />
+        </Route>
+        <Route exact path = "/register">
+          <Register />
+        </Route>
+      </Switch>
+    </Router>
     </>  );
 }
 
