@@ -4,7 +4,6 @@ import {Color} from "./Constants";
 const Box = styled.div`
   background-color: ${(props)=> props.color ? props.color : Color.White};
   font-size: 1em;
-  margin: 1em;
   padding-top: 12px;
   padding-bottom: 12px;
   min-width: 287px;
