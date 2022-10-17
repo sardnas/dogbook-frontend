@@ -28,6 +28,9 @@ const Register = () => {
       <Spacing height = {"5px"}></Spacing>
       <Input type ="password" placeholder='Password...'></Input>
       <Spacing height = {"1em"}></Spacing>
+      <Text color = {Color.Red}>Enter your dog's breed: </Text>
+      <Input type = "search"></Input>
+      <Spacing height = {"1em"}></Spacing>
       <Link to = "/register">
         <Button>Let's go!</Button>
       </Link>
