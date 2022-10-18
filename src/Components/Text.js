@@ -7,7 +7,7 @@ const Text = styled.text`
   border: none;
   color: ${(props)=> props.color ? props.color : Color.White};
   font-family: "Jost";
-  text-align: center;
+  text-align: ${(props)=> props.textAlign ? props.textAlign : "center"};
 `;
 
 export default Text;

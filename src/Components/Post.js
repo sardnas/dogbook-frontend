@@ -18,6 +18,9 @@ const Post = styled.text`
   border: none;
   color: ${Color.DarkGrey};
   font-family: "Jost";
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
   -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25); 
 box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.25);
 `;

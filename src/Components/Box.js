@@ -5,7 +5,7 @@ const Box = styled.div`
   background-color: ${(props)=> props.color ? props.color : Color.White};
   font-size: 1em;
   padding-top: ${(props)=> props.paddingTop ? props.paddingTop : "12px"};
-  padding-bottom: 12px;
+  padding-bottom: ${(props)=> props.paddingBottom ? props.paddingBottom : "12px"};
   min-width: ${(props)=> props.minWidth ? props.minWidth : "287px"};
   max-width: ${(props)=> props.maxWidth ? props.maxWidth : "450px"};
   border-radius: 12px;

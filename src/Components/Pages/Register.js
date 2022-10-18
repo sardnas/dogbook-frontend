@@ -12,9 +12,11 @@ const Register = () => {
     return(
         <>
   <CenterScreen>
-    <Box color = {Color.Red}><Text>New member</Text></Box>
+    <Box color = {Color.Red} paddingTop = {"1.5em"} paddingBottom = {"1.5em"} minWidth = {"350px"}>
+      <Text>New member</Text>
+    </Box>
     <Spacing height = {"1em"}></Spacing>
-    <Box>
+    <Box minWidth = {"350px"}>
     <Spacing height = {"1em"}></Spacing>
     <Text color = {Color.Yellow}>Enter your email: </Text>
       <Spacing height = {"5px"}></Spacing>
@@ -29,10 +31,10 @@ const Register = () => {
       <Input type ="password" placeholder='Password...'></Input>
       <Spacing height = {"1em"}></Spacing>
       <Text color = {Color.Red}>Enter your dog's breed: </Text>
-      <Input type = "search"></Input>
+      <Input type = "search" placeholder = "Scroll"></Input>
       <Spacing height = {"1em"}></Spacing>
       <Link to = "/register">
-        <Button>Let's go!</Button>
+        <Button minWidth = {"299px"}>Let's go!</Button>
       </Link>
     </Box>
     </CenterScreen>

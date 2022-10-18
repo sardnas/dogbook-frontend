@@ -27,9 +27,11 @@ const Start = () => {
             <Text color = {Color.DarkGrey}>What's on your mind?</Text>
             <Spacing height = {"1em"}></Spacing>
             <Input placeholder='Hello...' fontSize = '15px' minWidth = {"350px"} minHeight = {"3em"}></Input>
-            <Button minWidth = {"350px"}>Post message</Button>
+            <Button minWidth = {"350px"} color = {Color.Blue}>Post message</Button>
             <Spacing height = {"1em"}></Spacing>
-            <Post minWidth = {"343px"} minHeight = {"3em"} fontSize = '15px'>Hej alla! Idag var det fint väder.</Post>
+            <Post minWidth = {"343px"} minHeight = {"3em"} fontSize = '15px'>
+                <Text textAlign = {"left"} color = {Color.MediumGrey} fontSize = '17px'>Username</Text>
+                Hej alla! Idag var det fint väder.</Post>
         </Box>
         <Spacing width = {"1em"}></Spacing>
         <Box color = {Color.White}>
