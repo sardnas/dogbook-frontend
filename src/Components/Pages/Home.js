@@ -7,17 +7,21 @@ import Input from "../Input.js"
 import Spacing from '../Spacing';
 import CenterScreen from '../CenterScreen';
 import {Link} from 'react-router-dom';
+import logo from '../WhiteIcon.svg';
+import BigBox from "../BigBox.js"
 
 function Home() {
   return ( <>
   <CenterScreen>
-    <Box color = {Color.Blue}>
+    <BigBox color = {Color.Blue} minWidth = {"350px"}>
+      <img src={logo} alt="Logo" height = {"75px"}/>
+      <Spacing width = {"1em"}></Spacing>
       <Spacing height = {"1em"}></Spacing>
-      <Text>dogbook</Text>
+      <Text fontSize = {"3em"}>dogbook</Text>
       <Spacing height = {"1em"}></Spacing>
-      </Box>
+      </BigBox>
       <Spacing height = {"10px"}></Spacing>
-    <Box>
+    <Box minWidth = {"350px"} content = {"left"}>
     <Spacing height = {"1em"}></Spacing>
     <Text color = {Color.Yellow}>Enter your username: </Text>
       <Spacing height = {"5px"}></Spacing>
@@ -27,9 +31,11 @@ function Home() {
       <Spacing height = {"5px"}></Spacing>
       <Input type={"password"} placeholder='Password...'></Input>
       <Spacing height = {"1em"}></Spacing>
-      <Button color = {Color.BlueGreen}>Log in</Button>
+      <Link to = "/start">
+        <Button color = {Color.BlueGreen} minWidth = {"299px"}>Log in</Button>
+      </Link>
       <Link to = "/register">
-        <Button>Register</Button>
+        <Button minWidth = {"299px"}>Register</Button>
       </Link>
     </Box>
     <Spacing height = {"10px"}></Spacing>

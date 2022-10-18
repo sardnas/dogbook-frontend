@@ -6,7 +6,7 @@ const BigBox = styled.div`
   font-size: 1em;
   padding-top: 12px;
   padding-bottom: 12px;
-  min-width: 287px;
+  min-width: ${(props)=> props.minWidth ? props.minWidth : "287px"};
   max-width: ${(props)=> props.maxWidth ? props.maxWidth : "450px"};
   border-radius: 12px;
   border: none;

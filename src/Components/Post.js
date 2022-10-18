@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {Color} from "./Constants";
 
-const Input = styled.input`
+const Post = styled.text`
   background-color: ${(props)=> props.color ? props.color : Color.LightGrey};
   font-size: ${(props) => (props.fontSize ? props.fontSize : "1.3em")};
   font-weight: bold;
@@ -19,7 +19,7 @@ const Input = styled.input`
   color: ${Color.DarkGrey};
   font-family: "Jost";
   -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25); 
-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.25);
 `;
 
-export default Input;
+export default Post;

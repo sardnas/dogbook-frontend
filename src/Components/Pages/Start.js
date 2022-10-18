@@ -8,6 +8,8 @@ import Spacing from '../Spacing';
 import CenterScreen from '../CenterScreen';
 import Button from "../Button.js"
 import {Link} from 'react-router-dom';
+import Post from "../Post";
+import logo from '../BlackIcon.svg';
 
 const Start = () => {
     return(
@@ -15,21 +17,38 @@ const Start = () => {
         <CenterScreen>
         <BigBox>
         <Box color = {Color.White}>
+            <Spacing height = {"50px"}></Spacing>
+            <img src={logo} alt="Logo" height = {"150px"}/>
+            <Spacing height = {"1em"}></Spacing>
             <Text color = {Color.DarkGrey}>Username</Text>
         </Box>
         <Spacing width = {"1em"}></Spacing>
-        <Box color = {Color.White} min-width = {"400px"}>
-            <Input placeholder='Hello...'></Input>
-            <Button>Post message</Button>
+        <Box color = {Color.White} minWidth = {"400px"} paddingTop = {"50px"}>
+            <Text color = {Color.DarkGrey}>What's on your mind?</Text>
+            <Spacing height = {"1em"}></Spacing>
+            <Input placeholder='Hello...' fontSize = '15px' minWidth = {"350px"} minHeight = {"3em"}></Input>
+            <Button minWidth = {"350px"}>Post message</Button>
+            <Spacing height = {"1em"}></Spacing>
+            <Post minWidth = {"343px"} minHeight = {"3em"} fontSize = '15px'>Hej alla! Idag var det fint väder.</Post>
         </Box>
         <Spacing width = {"1em"}></Spacing>
         <Box color = {Color.White}>
-            <Button>Start</Button>
-            <Button color = {Color.Red}>Profile</Button>
-            <Button color = {Color.BlueGreen}>Users</Button>
-            <Button>Breeds</Button>
-            <Button color = {Color.Red}>Support</Button>
-            <Button color = {Color.BlueGreen}>Log out</Button>
+            <Button minWidth = {"243px"}>Start</Button>
+            <Link to = "/construction">
+                <Button color = {Color.Red} minWidth = {"243px"}>Profile</Button>
+            </Link>
+            <Link to = "/construction">
+                <Button color = {Color.BlueGreen} minWidth = {"243px"}>Users</Button>
+            </Link>
+            <Link to = "/construction">
+                <Button minWidth = {"243px"}>Breeds</Button>
+            </Link>
+            <Link to = "/construction">
+                <Button color = {Color.Red} minWidth = {"243px"}>Support</Button>
+            </Link>
+            <Link to = "/">
+                <Button color = {Color.BlueGreen} minWidth = {"243px"}>Log out</Button>
+            </Link>
         </Box>
         </BigBox>
     </CenterScreen>

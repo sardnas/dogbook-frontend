@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {Color} from "./Constants";
 
 const Text = styled.text`
-  font-size: 1.3em;
+  font-size: ${(props)=> props.fontSize ? props.fontSize : "1.3em"};
   font-weight: bold;
   border: none;
   color: ${(props)=> props.color ? props.color : Color.White};
