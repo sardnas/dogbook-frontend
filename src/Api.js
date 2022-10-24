@@ -8,10 +8,12 @@ export async function Login(username, password) {
   });
 }
 
-export async function Register(email, password, username) {
+export async function RegisterUser(email, password, breed, username) {
+  return;
+  console.log("Username:" + username);
   return await fetch(GetBasePath() + "user/create", {
     method: "POST",
-    body: JSON.stringify({ name: username, email, password }),
+    body: JSON.stringify({ name: username, email, breed, password }),
     headers: { "Content-Type": "application/json" },
   });
 }
@@ -23,4 +25,10 @@ export function GetBasePath() {
     requestPath = "http://localhost:5033/";
   }
   return requestPath;
+}
+
+export async function GetBreeds() {
+  return await fetch(GetBasePath() + "api/dog", {
+    method: "GET",
+  });
 }
