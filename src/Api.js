@@ -9,11 +9,9 @@ export async function Login(username, password) {
 }
 
 export async function RegisterUser(email, password, breed, username) {
-  return;
-  console.log("Username:" + username);
   return await fetch(GetBasePath() + "user/create", {
     method: "POST",
-    body: JSON.stringify({ name: username, email, breed, password }),
+    body: JSON.stringify({ username, email, breed, password }),
     headers: { "Content-Type": "application/json" },
   });
 }

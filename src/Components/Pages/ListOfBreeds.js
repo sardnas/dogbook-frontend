@@ -20,7 +20,6 @@ const ListOfBreeds = ({ breeds, breedSelected }) => {
         }}
       >
         {breeds.map((breed) => {
-          console.log(breed);
           return <option value={breed.id}>{breed.name}</option>;
         })}
       </select>

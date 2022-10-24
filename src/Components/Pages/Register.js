@@ -31,7 +31,11 @@ const Register = () => {
       setFetchingBreeds(true);
       let response = await GetBreeds();
       setFetchingBreeds(false);
-      if (response.status === 200) setBreeds(await response.json());
+      if (response.status === 200) {
+        let json = await response.json();
+        setBreed(json[0].id);
+        setBreeds(json);
+      }
       setHasFetchedBreeds(true);
     }
 
@@ -123,27 +127,24 @@ async function HandleRegister(
   cookies,
   navigate
 ) {
-  {
-    console.log("Den kör handleregister");
-    if (!ValidInput(username, email, password)) {
-      alert("Username, password or email is missing");
-      return;
-    }
-    console.log(username);
-    let response = await RegisterUser(email, password, breed, username);
+  if (!ValidInput(username, email, password)) {
+    alert("Username, password or email is missing");
+    return;
+  }
 
-    if (response.status === 400) {
-      alert("Unvalid input");
-    } else if (response.status !== 200) {
-      alert("Unknown error");
-    } else {
-      cookies.set("userInfo", await response.json(), {
-        path: "/",
-        sameSite: "none",
-        secure: true,
-      });
-      navigate.push("/start");
-    }
+  let response = await RegisterUser(email, password, breed, username);
+
+  if (response.status === 400) {
+    alert("Unvalid input");
+  } else if (response.status !== 200) {
+    alert("Unknown error");
+  } else {
+    cookies.set("userInfo", await response.json(), {
+      path: "/",
+      sameSite: "none",
+      secure: true,
+    });
+    navigate.push("/start");
   }
 }
 
