@@ -1,13 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Color from "../Constants";
-import Box from "../Box.js";
-import Text from "../Text.js";
-import Input from "../Input.js";
-import Spacing from "../Spacing";
-import CenterScreen from "../CenterScreen";
-import Button from "../Button.js";
-import { Link, useHistory } from "react-router-dom";
-import { GetBreeds } from "../../Api.js";
 
 const ListOfBreeds = ({ breeds, breedSelected }) => {
   return (

@@ -44,6 +44,10 @@ const Register = () => {
     }
   }, [breeds, fetchingBreeds, hasFetchedBreeds]);
 
+  function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+
   return (
     <>
       <CenterScreen>
@@ -64,7 +68,9 @@ const Register = () => {
             type="email"
             placeholder="example@dogbook.com"
             onChange={(event) => {
-              setEmail(event.target.value);
+              if (isValidEmail(event.target.value)) {
+                setEmail(event.target.value);
+              }
             }}
           />
           <Spacing height={"15px"}></Spacing>
