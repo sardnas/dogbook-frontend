@@ -20,7 +20,11 @@ const ListOfBreeds = ({ breeds, breedSelected }) => {
         }}
       >
         {breeds.map((breed) => {
-          return <option value={breed.id}>{breed.name}</option>;
+          return (
+            <option key={breed.id} value={breed.id}>
+              {breed.name}
+            </option>
+          );
         })}
       </select>
     </>
