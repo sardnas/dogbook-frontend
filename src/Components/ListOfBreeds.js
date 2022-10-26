@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import StyledOption from "./StyledOption.js";
+import StyledSelect from "./StyledSelect.js";
 
 const ListOfBreeds = ({ breeds, breedSelected }) => {
   return (
     <>
-      <select
+      <StyledSelect
         name="breed"
         id="breeds"
         onChange={(event) => {
@@ -12,12 +14,12 @@ const ListOfBreeds = ({ breeds, breedSelected }) => {
       >
         {breeds.map((breed) => {
           return (
-            <option key={breed.id} value={breed.id}>
+            <StyledOption key={breed.id} value={breed.id}>
               {breed.name}
-            </option>
+            </StyledOption>
           );
         })}
-      </select>
+      </StyledSelect>
     </>
   );
 };

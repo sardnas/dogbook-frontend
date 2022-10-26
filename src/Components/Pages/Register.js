@@ -6,10 +6,12 @@ import Input from "../Input.js";
 import Spacing from "../Spacing";
 import CenterScreen from "../CenterScreen";
 import Button from "../Button.js";
+import Loading from "../Loading.js";
 import { Link, useHistory } from "react-router-dom";
 import { GetBreeds, RegisterUser } from "../../Api.js";
-import ListOfBreeds from "./ListOfBreeds";
+import ListOfBreeds from "../ListOfBreeds.js";
 import Cookies from "universal-cookie";
+import { PropagateLoader } from "react-spinners";
 
 const Register = () => {
   const [email, setEmail] = useState(null);
@@ -66,7 +68,7 @@ const Register = () => {
           <Spacing height={"5px"}></Spacing>
           <Input
             type="email"
-            placeholder="example@dogbook.com"
+            placeholder="example@dogbook.nu"
             onChange={(event) => {
               if (isValidEmail(event.target.value)) {
                 setEmail(event.target.value);
@@ -77,7 +79,7 @@ const Register = () => {
           <Text color={Color.BlueGreen}>Enter your username: </Text>
           <Spacing height={"5px"}></Spacing>
           <Input
-            placeholder="HappyDog1"
+            placeholder="doodle_dog"
             onChange={(event) => {
               setUsername(event.target.value);
             }}
@@ -94,7 +96,6 @@ const Register = () => {
           />
           <Spacing height={"1em"}></Spacing>
           <Text color={Color.Red}>Enter your dog's breed: </Text>
-          <Spacing width={"1em"}></Spacing>
           {breeds ? (
             <ListOfBreeds
               breeds={breeds}
@@ -102,7 +103,9 @@ const Register = () => {
                 setBreed(breedId);
               }}
             ></ListOfBreeds>
-          ) : null}
+          ) : (
+            <Loading />
+          )}
           <Spacing height={"1em"}></Spacing>
           <Button
             onClick={async () => {

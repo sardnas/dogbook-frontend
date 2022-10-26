@@ -6,7 +6,6 @@ import Home from "./Components/Pages/Home";
 import Start from "./Components/Pages/Start";
 import UnderConstruction from "./Components/Pages/UnderConstruction";
 import Breeds from "./Components/Pages/Breeds";
-import ListOfBreeds from "./Components/Pages/ListOfBreeds";
 
 function App() {
   return (
