@@ -11,8 +11,8 @@ const StyledOption = styled.option`
   min-width: ${(props) => (props.minWidth ? props.minWidth : "200px")};
   max-width: ${(props) => (props.maxWidth ? props.maxWidth : "287px")};
   border-radius: 12px;
-  border: none;
-  color: ${Color.White};
+  border: solid;
+  color: ${Color.DarkGrey};
   font-family: "Jost";
 `;
 

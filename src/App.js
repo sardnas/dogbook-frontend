@@ -6,6 +6,7 @@ import Home from "./Components/Pages/Home";
 import Start from "./Components/Pages/Start";
 import UnderConstruction from "./Components/Pages/UnderConstruction";
 import Breeds from "./Components/Pages/Breeds";
+import Profile from "./Components/Pages/Profile";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route exact path="/breeds">
             <Breeds />
+          </Route>
+          <Route exact path="/profile">
+            <Profile />
           </Route>
         </Switch>
       </Router>

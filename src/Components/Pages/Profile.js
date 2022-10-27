@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
+import Button from "../Button.js";
 import Color from "../Constants";
 import Box from "../Box.js";
-import BigBox from "../BigBox.js";
 import Text from "../Text.js";
 import Input from "../Input.js";
 import Spacing from "../Spacing";
 import CenterScreen from "../CenterScreen";
-import Button from "../Button.js";
 import { Link, useHistory } from "react-router-dom";
-import Post from "../Post";
 import logo from "../BlackIcon.svg";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import Cookies from "universal-cookie";
+import BigBox from "../BigBox.js";
 
-const Start = () => {
+function Profile() {
   const cookies = new Cookies();
   const userInfo = cookies.get("userInfo");
   const isLoggedIn = userInfo !== undefined && userInfo != null;
@@ -30,34 +29,29 @@ const Start = () => {
       navigate.push("/"); //todo make it not possible to post
     }
   }, [navigate, isLoggedIn]);
-
   return (
     <>
       <CenterScreen>
         <BigBox>
-          <Box color={Color.White}>
-            <Spacing height={"50px"}></Spacing>
-            <img src={logo} alt="Logo" height={"150px"} />
-            <Spacing height={"1em"}></Spacing>
-            <Text color={Color.DarkGrey}>{userInfo ? userInfo.name : ""}</Text>
-            <Text fontSize={"1em"} color={Color.MediumGrey}>
-              breed
+          <Box
+            minWidth={"400px"}
+            paddingTop={"50px"}
+            paddingLeft={"2em"}
+            paddingRight={"2em"}
+          >
+            <Text color={Color.Red}>
+              Welcome to {userInfo ? userInfo.name : ""}'s page!
             </Text>
-          </Box>
-          <Spacing width={"1em"}></Spacing>
-          <Box color={Color.White} minWidth={"400px"} paddingTop={"50px"}>
-            <Text color={Color.DarkGrey}>What's on your mind?</Text>
-            <Spacing height={"1em"}></Spacing>
-            <Input
-              placeholder="Hello..."
-              fontSize="15px"
-              minWidth={"350px"}
-              minHeight={"3em"}
-            ></Input>
+            <Spacing height={"1.5em"}></Spacing>
+            <Text fontSize={"1em"} color={Color.DarkGrey}>
+              I'm a dog of the breed _. You can learn more about my breed under
+              the page "Breeds" in the menu!
+            </Text>
+            <Spacing height={"10em"}></Spacing>
             <Popup
               trigger={
                 <Button minWidth={"350px"} color={Color.Blue}>
-                  Post message
+                  Edit profile
                 </Button>
               }
               position="right center"
@@ -66,25 +60,10 @@ const Start = () => {
                 This functionality is under construction :( come back later!
               </div>
             </Popup>
-            <Spacing height={"1em"}></Spacing>
-            <Post minWidth={"343px"} minHeight={"3em"} fontSize="15px">
-              <Text textAlign={"left"} color={Color.MediumGrey} fontSize="17px">
-                doodle_dog, cocker spaniel
-              </Text>
-              Hej alla!! Söker hundkompisar som vill leka
-            </Post>
-            <Spacing height={"1em"}></Spacing>
-            <Post minWidth={"343px"} minHeight={"3em"} fontSize="15px">
-              <Text textAlign={"left"} color={Color.MediumGrey} fontSize="17px">
-                admindog, beagle
-              </Text>
-              Välkommen till dogbook! Hoppas att du har en trevlig vistelse.
-            </Post>
           </Box>
-          <Spacing width={"1em"}></Spacing>
           <Box color={Color.White}>
             <Button minWidth={"243px"}>Start</Button>
-            <Link to="/construction">
+            <Link to="/profile">
               <Button color={Color.Red} minWidth={"243px"}>
                 Profile
               </Button>
@@ -118,7 +97,7 @@ const Start = () => {
       </CenterScreen>
     </>
   );
-};
+}
 
 function Logout(cookies) {
   cookies.remove("userInfo", {
@@ -129,4 +108,4 @@ function Logout(cookies) {
   window.location.reload();
 }
 
-export default Start;
+export default Profile;

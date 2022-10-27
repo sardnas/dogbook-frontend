@@ -85,7 +85,7 @@ const Register = () => {
             }}
           />
           <Spacing height={"15px"}></Spacing>
-          <Text color={Color.Blue}>Choose a password: </Text>
+          <Text color={Color.Red}>Choose a password: </Text>
           <Spacing height={"5px"}></Spacing>
           <Input
             type="password"
@@ -95,7 +95,7 @@ const Register = () => {
             }}
           />
           <Spacing height={"1em"}></Spacing>
-          <Text color={Color.Red}>Enter your dog's breed: </Text>
+          <Text color={Color.Blue}>Enter your dog's breed: </Text>
           {breeds ? (
             <ListOfBreeds
               breeds={breeds}
@@ -106,7 +106,6 @@ const Register = () => {
           ) : (
             <Loading />
           )}
-          <Spacing height={"1em"}></Spacing>
           <Button
             onClick={async () => {
               await HandleRegister(
@@ -122,6 +121,11 @@ const Register = () => {
           >
             Let's go!
           </Button>
+          <Link to="/start">
+            <Button minWidth={"299px"} color={Color.Blue}>
+              Go back to start
+            </Button>
+          </Link>
         </Box>
       </CenterScreen>
     </>
