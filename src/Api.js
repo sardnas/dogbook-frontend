@@ -17,10 +17,10 @@ export async function RegisterUser(email, password, breed, username) {
 }
 
 export function GetBasePath() {
-  let requestPath = "https://dogbook-api.herokuapp.com/";
+  let requestPath = "https://ledigasalar.online/dogbook-api/api/dog";
   if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
     //use local address if development
-    requestPath = "http://localhost:5033/";
+    //requestPath = "http://localhost:5033/";
   }
   return requestPath;
 }
