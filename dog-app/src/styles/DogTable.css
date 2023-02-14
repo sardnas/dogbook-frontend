@@ -3,12 +3,47 @@
     border-collapse: collapse;
     width: 100%;
 }
+
 .td,
 .th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 }
+
 .tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: grey;
+    background-size: contain;
+}
+
+.tr:nth-child(odd) {
+    background-color: darkolivegreen;
+    background-size: contain;
+}
+
+.dogTableSearchBar {
+    border: none;
+    border-radius: 1rem;
+    min-height: 2rem;
+    padding-left: 1rem;
+    width: calc(100% - 1rem);
+}
+
+.dogTableColumn {
+    max-width: 15rem;
+    flex: 1;
+}
+
+.dogRow {
+    background-color: grey;
+    border-radius: 1rem;
+    min-width: 5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.verticalSpacing {
+    min-height: 0.5rem;
 }

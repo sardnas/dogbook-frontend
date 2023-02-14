@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { GetBreeds } from "../Api";
+import '../styles/Dogopedia.css';
 import DogTable from "../functions/DogTable";
 
 const Dogopedia = () => {
@@ -49,14 +50,14 @@ const Dogopedia = () => {
   console.log(errorFetchingBreeds);
 
   const getHeadings = () => {
-        return Object.keys(breeds[0]);
-    }
+    return Object.keys(breeds[0]);
+  }
   return (
     <>
       <h1>Dogopedia</h1>
-      
+
       {breeds ? ( //if breeds exist we want to display them
-      <DogTable theadData={getHeadings()} tbodyData={breeds}/>
+        <DogTablePage dogs={breeds} />
       ) : errorFetchingBreeds ? ( //if breeds don't exist we display a message based on if there has been an error or not
         <div>
           something went terribly, terribly wrong when fetching breeds 😞
@@ -67,5 +68,9 @@ const Dogopedia = () => {
     </>
   );
 };
+
+const DogTablePage = ({ dogs }) => {
+  return <div className="dogTablePage"><div className="horizontalSpacing"></div><DogTable data={dogs} /></div>;
+}
 
 export default Dogopedia;
