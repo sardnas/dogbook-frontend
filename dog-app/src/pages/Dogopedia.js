@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { GetBreeds } from "../Api";
+import DogTable from "../functions/DogTable";
 
 const Dogopedia = () => {
   const [shouldFetchBreeds, setShouldFetchBreeds] = useState(true); //true because it should fetch the breeds when the page loads
@@ -46,14 +47,16 @@ const Dogopedia = () => {
   }, [shouldFetchBreeds, breeds]); //this is a dependency array, it tells react what values it should watch for updates
 
   console.log(errorFetchingBreeds);
+
+  const getHeadings = () => {
+        return Object.keys(breeds[0]);
+    }
   return (
     <>
       <h1>Dogopedia</h1>
+      
       {breeds ? ( //if breeds exist we want to display them
-        breeds.map((oneBreed, index) => {
-          //look up "javascript map" for more information about this syntax. It takes a list of something and then returns something for each item in the list
-          return <div key={index}>there's a breed called: {oneBreed.breed_name}</div>;
-        })
+      <DogTable theadData={getHeadings()} tbodyData={breeds}/>
       ) : errorFetchingBreeds ? ( //if breeds don't exist we display a message based on if there has been an error or not
         <div>
           something went terribly, terribly wrong when fetching breeds 😞
