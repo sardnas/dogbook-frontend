@@ -26,7 +26,7 @@ export async function CreateBreed(name, color, trainability) {
 //but obviously you don't want to use that locally hosted webapi when you have published the site
 
 const publishedBasePath = "https://obviouslyfakedomainname.se/dog-info-api";
-const localBasePath = "https://localhost:5001"; // <---- change this to the path of your locally hosted webapi (!!)
+const localBasePath = "https://localhost"; // <---- change this to the path of your locally hosted webapi (!!)
 
 let requestBasePath = null;
 

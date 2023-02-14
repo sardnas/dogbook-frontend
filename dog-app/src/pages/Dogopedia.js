@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { GetBreeds } from "../Api";
 
-const Home = () => {
+const Dogopedia = () => {
   const [shouldFetchBreeds, setShouldFetchBreeds] = useState(true); //true because it should fetch the breeds when the page loads
   const [errorFetchingBreeds, setErrorFetchingBreeds] = useState(false); //false because no error has occured when the page loads
   const [breeds, setBreeds] = useState(null); //null because there is no breeds data yet
@@ -48,21 +48,21 @@ const Home = () => {
   console.log(errorFetchingBreeds);
   return (
     <>
-      <h1>Home</h1>
+      <h1>Dogopedia</h1>
       {breeds ? ( //if breeds exist we want to display them
-        breeds.listOfBreeds.map((oneBreed, index) => {
+        breeds.map((oneBreed, index) => {
           //look up "javascript map" for more information about this syntax. It takes a list of something and then returns something for each item in the list
-          return <div key={index}>there's a breed called: {oneBreed.name}</div>;
+          return <div key={index}>there's a breed called: {oneBreed.breed_name}</div>;
         })
       ) : errorFetchingBreeds ? ( //if breeds don't exist we display a message based on if there has been an error or not
         <div>
           something went terribly, terribly wrong when fetching breeds 😞
         </div>
       ) : (
-        <div>loading breeds probably... ✋🤠👉⌛</div>
+        <div>loading breeds... ✋🤠👉⌛</div>
       )}
     </>
   );
 };
 
-export default Home;
+export default Dogopedia;
