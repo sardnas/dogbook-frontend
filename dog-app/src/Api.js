@@ -21,12 +21,30 @@ export async function CreateBreed(name, color, trainability) {
   });
 }
 
+// Become memmber
+export async function CreateUser(username, email, password) {
+  return await fetch(GetBasePath() + "/api/auth/signup", {
+    method: "POST",
+    body: JSON.stringify({ username, email, password }),
+    headers: { "Content-Type": "application/json" },
+  });
+}
+
+// log in
+export async function SignIn(username, password) {
+  return await fetch(GetBasePath() + "/api/auth/signin", {
+    method: "POST",
+    body: JSON.stringify({ username, password }),
+    headers: { "Content-Type": "application/json" },
+  });
+}
+
 //below is code to make it easier to have one base path when you are developing locally and one when the site is published
 //it is because maybe you want to use a locally hosted webapi when developing to make it easier to debug
 //but obviously you don't want to use that locally hosted webapi when you have published the site
 
 const publishedBasePath = "https://obviouslyfakedomainname.se/dog-info-api";
-const localBasePath = "https://localhost"; // <---- change this to the path of your locally hosted webapi (!!)
+const localBasePath = "http://localhost:8080"; // <---- change this to the path of your locally hosted webapi (!!)
 
 let requestBasePath = null;
 

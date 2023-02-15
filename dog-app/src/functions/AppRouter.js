@@ -4,21 +4,25 @@ import Dogopedia from "../pages/Dogopedia";
 import Element from "../pages/Element";
 import NoPage from "../pages/NoPage";
 import Start from "../pages/Start";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 
 function AppRouter() {
 
   return (
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Start />} />
-              <Route path="dogopedia" element={<Dogopedia />} />
-              <Route path="element" element={<Element />} />
-              <Route path="*" element={<NoPage />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Start />} />
+          <Route path="dogopedia" element={<Dogopedia />} />
+          <Route path="element" element={<Element />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
