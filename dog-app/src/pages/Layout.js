@@ -1,22 +1,11 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import '../styles/NavBar.css';
+import NavMenuLayout from "./NavMenuLayout";
+
 const Layout = () => {
   return (
     <>
-      <nav className="navigation-menu">
-        <ul className="navigation-menu ul">
-          <li className="navigation-menu li">
-            <Link className="navigation-menu li a" to="/">Start</Link>
-          </li>
-          <li className="navigation-menu li">
-            <Link className="navigation-menu li a" to="/dogopedia">Dogopedia</Link>
-          </li>
-          <li className="navigation-menu li">
-            <Link className="navigation-menu li a" to="/element">Element</Link>
-          </li>
-        </ul>
-      </nav>
-
+      <NavMenuLayout />
       <Outlet />
     </>
   )

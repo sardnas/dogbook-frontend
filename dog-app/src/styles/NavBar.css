@@ -1,18 +1,29 @@
-.navigation-menu{
-  margin-right: auto;
+.navigation-menu {
+  width: 100%;
 }
 
 .navigation-menu ul {
-  display: flex;
-  padding: 0;
-}
-.navigation-menu li {
   list-style-type: none;
-  margin: 0 1rem;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+
 }
+
+.navigation-menu li {
+  float: left;
+  list-style-type: none;
+}
+
 .navigation-menu li a {
   text-decoration: none;
   display: block;
   width: 100%;
   color: white;
+  text-align: center;
+}
+
+.nsfds {
+  display: flex;
+  padding: 0;
 }

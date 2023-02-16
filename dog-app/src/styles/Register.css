@@ -1,0 +1,30 @@
+.RegisterContainer {
+    width: 40%;
+    background-color: green;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+}
+
+.Input {
+    border: none;
+    border-radius: 1rem;
+    min-height: 2rem;
+    padding-left: 1rem;
+    width: calc(100% - 10rem);
+    margin-top: 2rem;
+    display: list-item;
+}
+
+.Button {
+    border: none;
+    border-radius: 1rem;
+    min-height: 2rem;
+    width: calc(100% - 20rem);
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}

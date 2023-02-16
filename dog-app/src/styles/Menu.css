@@ -1,0 +1,33 @@
+.MenuContainer {
+    width: 100%;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+.MenuComponentLeft {
+    color: green;
+    float: left;
+}
+
+.MenuComponentRight {
+    color: white;
+    float: right;
+}
+
+.LinkContainer {
+    float: left;
+    margin-left: 1rem;
+}
+
+.MarginRight {
+    float: left;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.link {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    color: white;
+}
