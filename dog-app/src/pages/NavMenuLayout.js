@@ -7,7 +7,7 @@ const NavMenuLayout = () => {
     const cookies = new Cookies();
     const userInfo = cookies.get("userInfo");
     const isLoggedIn = userInfo !== undefined && userInfo != null;
-    console.log(userInfo);
+    //console.log(userInfo);
     return (
         <>
             <div className="MenuContainer">

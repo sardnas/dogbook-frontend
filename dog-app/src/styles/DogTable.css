@@ -31,6 +31,7 @@
 
 .dogTableColumn {
     max-width: 15rem;
+    min-width: 15rem;
     flex: 1;
 }
 
@@ -46,4 +47,26 @@
 
 .verticalSpacing {
     min-height: 0.5rem;
+}
+
+.dogOuterContainer {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.doginnerContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.dogContainer {
+    min-width: 50rem;
+    height: 35rem;
+    position: sticky;
+    top: 1rem;
+    margin-left: 2rem;
+    background-color: green;
 }
