@@ -1,0 +1,9 @@
+.signoutButtonContainer {
+    border: none;
+    border-radius: 1rem;
+    min-height: 2rem;
+    width: calc(100% - 20rem);
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}

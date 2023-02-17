@@ -1,6 +1,5 @@
 .RegisterContainer {
     width: 40%;
-    background-color: green;
     text-align: center;
     display: flex;
     flex-direction: column;

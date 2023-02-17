@@ -7,6 +7,8 @@ import Start from "../pages/Start";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import React from "react";
+import FirstLayout from "../pages/FirstLayout";
+import Hello from "../pages/Hello";
 
 
 function AppRouter() {
@@ -14,12 +16,15 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<FirstLayout />} >
+          <Route index element={<Hello />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Route>
+        <Route path="user" element={<Layout />}>
           <Route index element={<Start />} />
           <Route path="dogopedia" element={<Dogopedia />} />
           <Route path="element" element={<Element />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

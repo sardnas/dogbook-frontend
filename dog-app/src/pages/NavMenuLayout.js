@@ -1,28 +1,30 @@
 import { Link } from "react-router-dom";
 import '../styles/Menu.css';
 import React from "react";
+import Cookies from "universal-cookie";
 
 const NavMenuLayout = () => {
+    const cookies = new Cookies();
+    const userInfo = cookies.get("userInfo");
+    const isLoggedIn = userInfo !== undefined && userInfo != null;
+    console.log(userInfo);
     return (
         <>
             <div className="MenuContainer">
                 <div className="MenuComponentLeft">
                     <div className="LinkContainer">
-                        <Link className="link" to="/">Start</Link>
+                        <Link className="link" to="/user">Start</Link>
                     </div>
                     <div className="LinkContainer">
-                        <Link className="link" to="/dogopedia">Dogopedia</Link>
+                        <Link className="link" to="/user/dogopedia">Dogopedia</Link>
                     </div>
                     <div className="LinkContainer">
-                        <Link className="link" to="/element">Element</Link>
+                        <Link className="link" to="/user/element">Element</Link>
                     </div>
                 </div>
                 <div className="MenuComponentRight">
-                    <div className="LinkContainer">
-                        <Link className="link" to="/register">Signup</Link>
-                    </div>
                     <div className="MarginRight">
-                        <Link className="link" to="/login">Login</Link>
+                        <div className="link">User: {(isLoggedIn ? (userInfo.username) : ("undefined"))}</div>
                     </div>
                 </div>
             </div>

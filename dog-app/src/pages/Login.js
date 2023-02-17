@@ -2,11 +2,15 @@ import { SignIn } from "../Api";
 import '../styles/Register.css';
 import { useState, useEffect } from "react";
 import React from "react";
+import { useNavigate } from "react-router";
+import Cookies from "universal-cookie";
 
 const Login = () => {
     const [inputUsername, setUsername] = useState("");
     const [inputPassword, setPassword] = useState("");
     const [errorLogin, setErrorLogin] = useState(false);
+    const navigate = useNavigate();
+    const cookies = new Cookies();
 
     const onUsernameChange = event => {
         setUsername(event.target.value);
@@ -19,9 +23,10 @@ const Login = () => {
     };
     console.log(inputPassword);
 
-    const handleOnClick = () => {
+    const handleOnLogin = () => {
         PostLoginDetails();
     }
+
 
     async function PostLoginDetails() {
         try {
@@ -31,10 +36,15 @@ const Login = () => {
             if (response.status === 200) {
                 let json = await response.json(); //we want to parse the response body as json if it was a sucess
 
-                console.log(json); //don't publish code with this line! I just added it here to show that
+                //console.log(json); //don't publish code with this line! I just added it here to show that
                 //it can be quite usefull to write the value of the json object to the console
                 //you could try to write out the value of response too if there is something that is not working
-
+                cookies.set("userInfo", json, {
+                    path: "/",
+                    sameSite: "none",
+                    secure: true,
+                });
+                navigate("/user");
             } else if (response.status === 400) {
                 //we can check for specific error codes like this
                 alert(
@@ -59,7 +69,7 @@ const Login = () => {
             <div className="RegisterContainer">
                 <input onChange={onUsernameChange} value={inputUsername} className="Input" type="text" placeholder='Username' />
                 <input onChange={onPasswordChange} value={inputPassword} className="Input" type="password" placeholder='Password' />
-                <button onClick={handleOnClick} className="Button">Submit</button>
+                <button onClick={handleOnLogin} className="Button">Submit</button>
             </div>
         </>
     );

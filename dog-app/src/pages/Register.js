@@ -2,12 +2,16 @@ import { CreateUser } from "../Api";
 import { useState, useEffect } from "react";
 import '../styles/Register.css';
 import React from "react";
+import { useNavigate } from "react-router";
+import Cookies from "universal-cookie";
 
 const Register = () => {
     const [inputUsername, setUsername] = useState("");
     const [inputEmail, setEmail] = useState("");
     const [inputPassword, setPassword] = useState("");
     const [errorRegister, setErrorRegister] = useState(false);
+    const navigate = useNavigate();
+    const cookies = new Cookies();
 
     const onUsernameChange = event => {
         setUsername(event.target.value);
@@ -24,7 +28,7 @@ const Register = () => {
     };
     console.log(inputPassword);
 
-    const handleOnClick = () => {
+    const handleOnRegister = () => {
         PostRegisterDetails();
     }
 
@@ -36,9 +40,13 @@ const Register = () => {
             if (response.status === 200) {
                 let json = await response.json(); //we want to parse the response body as json if it was a sucess
 
-                console.log(json); //don't publish code with this line! I just added it here to show that
-                //it can be quite usefull to write the value of the json object to the console
-                //you could try to write out the value of response too if there is something that is not working
+                cookies.set("userInfo", json, {
+                    path: "/",
+                    sameSite: "none",
+                    secure: true,
+                });
+
+                navigate("/user");
 
             } else if (response.status === 400) {
                 //we can check for specific error codes like this
@@ -58,12 +66,12 @@ const Register = () => {
     }
     return (
         <>
-            <h1>Create user</h1>
+            <h1>Create account</h1>
             <div className="RegisterContainer">
                 <input onChange={onUsernameChange} value={inputUsername} className="Input" type="text" placeholder='Username' />
                 <input onChange={onEmailChange} value={inputEmail} className="Input" type="text" placeholder='Email' />
                 <input onChange={onPasswordChange} value={inputPassword} className="Input" type="password" placeholder='Password' />
-                <button onClick={handleOnClick} className="Button">Submit</button>
+                <button onClick={handleOnRegister} className="Button">Submit</button>
             </div>
         </>
     );
