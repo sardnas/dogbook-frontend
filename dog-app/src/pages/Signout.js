@@ -17,7 +17,7 @@ const Signout = () => {
     }
     return (
         <div className="signoutButtonContainer">
-            <div onClick={() => {
+            <div className="right" onClick={() => {
                 Logout(cookies);
             }}>Log out</div>
         </div>

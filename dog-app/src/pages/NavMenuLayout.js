@@ -19,7 +19,7 @@ const NavMenuLayout = () => {
                         <Link className="link" to="/user/dogopedia">Dogopedia</Link>
                     </div>
                     <div className="LinkContainer">
-                        <Link className="link" to="/user/element">Element</Link>
+                        <Link className="link" to="/user/mydogs">My dogs</Link>
                     </div>
                 </div>
                 <div className="MenuComponentRight">

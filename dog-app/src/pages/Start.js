@@ -3,8 +3,8 @@ import Signout from "./Signout";
 const Start = () => {
   return (
     <>
-      <h1>Welcome</h1>
       <Signout />
+      <h1>Welcome</h1>
     </>
   );
 };

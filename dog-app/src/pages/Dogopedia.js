@@ -3,6 +3,7 @@ import { GetBreeds } from "../Api";
 import '../styles/Dogopedia.css';
 import DogTable from "../functions/DogTable";
 import React from "react";
+import Signout from "./Signout";
 
 const Dogopedia = () => {
   const [shouldFetchBreeds, setShouldFetchBreeds] = useState(true); //true because it should fetch the breeds when the page loads
@@ -55,10 +56,12 @@ const Dogopedia = () => {
   }
   return (
     <>
+      <Signout />
       <h1>Dogopedia</h1>
 
       {breeds ? ( //if breeds exist we want to display them
-        <DogTablePage dogs={breeds} />
+        <>
+          <DogTablePage dogs={breeds} /></>
       ) : errorFetchingBreeds ? ( //if breeds don't exist we display a message based on if there has been an error or not
         <div>
           something went terribly, terribly wrong when fetching breeds 😞
