@@ -1,6 +1,7 @@
 import { SignIn } from "../Api";
 import '../styles/Register.css';
 import { useState, useEffect } from "react";
+import React from "react";
 
 const Login = () => {
     const [inputUsername, setUsername] = useState("");

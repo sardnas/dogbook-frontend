@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { GetBreeds } from "../Api";
 import '../styles/Dogopedia.css';
 import DogTable from "../functions/DogTable";
+import React from "react";
 
 const Dogopedia = () => {
   const [shouldFetchBreeds, setShouldFetchBreeds] = useState(true); //true because it should fetch the breeds when the page loads

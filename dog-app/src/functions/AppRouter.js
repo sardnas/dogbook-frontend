@@ -6,6 +6,7 @@ import NoPage from "../pages/NoPage";
 import Start from "../pages/Start";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import React from "react";
 
 
 function AppRouter() {

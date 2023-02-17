@@ -1,6 +1,7 @@
 import { CreateUser } from "../Api";
 import { useState, useEffect } from "react";
 import '../styles/Register.css';
+import React from "react";
 
 const Register = () => {
     const [inputUsername, setUsername] = useState("");

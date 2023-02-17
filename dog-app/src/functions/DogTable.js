@@ -1,5 +1,6 @@
 import '../styles/DogTable.css';
-import { useState, useEffect, React } from "react";
+import { useState, useEffect } from "react";
+import React from "react";
 
 function DogTable({ data }) {
     console.log('DogTable: ');
