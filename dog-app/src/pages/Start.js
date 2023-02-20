@@ -9,7 +9,7 @@ const Start = () => {
   return (
     <>
       <Signout />
-      <h1>Welcome back {userInfo.username}!</h1>
+      <h1>Welcome {userInfo.username}!</h1>
     </>
   );
 };
