@@ -1,6 +1,6 @@
 import { SignIn } from "../Api";
 import '../styles/Register.css';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import React from "react";
 import { useNavigate } from "react-router";
 import Cookies from "universal-cookie";

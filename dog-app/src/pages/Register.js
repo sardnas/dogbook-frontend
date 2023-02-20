@@ -1,5 +1,5 @@
-import { CreateUser } from "../Api";
-import { useState, useEffect } from "react";
+import { CreateUser, SignIn } from "../Api";
+import { useState } from "react";
 import '../styles/Register.css';
 import React from "react";
 import { useNavigate } from "react-router";
@@ -35,7 +35,9 @@ const Register = () => {
 
             //check if the response was a sucess, 200 means that it was
             if (response.status === 200) {
-                let json = await response.json(); //we want to parse the response body as json if it was a sucess
+                //we want to parse the response body as json if it was a sucess
+                let responseLogin = await SignIn(inputUsername, inputPassword);
+                let json = await responseLogin.json();
 
                 cookies.set("userInfo", json, {
                     path: "/",
