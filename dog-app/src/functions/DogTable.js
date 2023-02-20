@@ -1,39 +1,48 @@
 import '../styles/DogTable.css';
 import { useState, useEffect } from "react";
-import React from "react";
+import React, { Component } from 'react';
 
-function DogTable({ data }) {
-    //console.log('DogTable: ');
-    //console.log(data[0].breed_name);
+class DogTable extends Component {
+    constructor(props) {
+        super(props);
+        console.log(props);
 
-    /*
-    const [search, setSearch] = React.useState('');
-
-    const handleSearch = (event) => {
-      setSearch(event.target.value);
-    };
-    https://www.robinwieruch.de/react-table-search/
-*/
-    const handleOnClick = (dog) => {
-        console.log(dog);
+        this.state = ({
+            message: "d"
+        })
     }
 
-    return (
-        <div className='dogOuterContainer'>
-            <div className='dogTableColumn'>
-                <input className='dogTableSearchBar' id="search" type="text" placeholder='Search for dogi' />
-                <div className='verticalSpacing' />
-                {data.map(element => { return <DogRow dog={element} /> })}
-            </div>
-            <div className='dogContainer'>
+    updateContent = (dogObject) => {
+        this.setState({ message: dogObject.breed_name });
+    }
 
+    render() {
+        return (
+            <div className='dogOuterContainer'>
+                <div className='dogTableColumn'>
+                    <input className='dogTableSearchBar' id="search" type="text" placeholder='Search for dogi' />
+                    <div className='verticalSpacing' />
+                    {this.props.data.map(element => { return <div><div onClick={() => this.updateContent(element)} className='dogRow'>{element.breed_name}</div><div className='verticalSpacing' /></div> })}
+                </div>
+                <dogInfo />
+                <div className='dogContainer'>
+                    {this.state.message}
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 const DogRow = ({ dog }) => {
     return <div><div className='dogRow'>{dog.breed_name}</div><div className='verticalSpacing' /></div>;
+}
+
+const handleOnClick = (dog) => {
+    dogInfo(dog);
+}
+
+const dogInfo = (dog) => {
+    return <div>gghhhhhhhhhh</div>;
 }
 
 export default DogTable;
