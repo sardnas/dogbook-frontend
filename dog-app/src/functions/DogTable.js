@@ -38,7 +38,7 @@ class DogTable extends Component {
         return (
             <div className='dogOuterContainer'>
                 <div className='dogTableColumn'>
-                    <input className='dogTableSearchBar' id="search" type="text" placeholder='Search for dogi' />
+                    <input className='dogTableSearchBar' id="search" type="text" placeholder='Search for dog (under construction)' />
                     <div className='verticalSpacing' />
                     {this.props.data.map(element => { return <div><div onClick={() => this.updateContent(element)} className='dogRow'>{element.breed_name}</div><div className='verticalSpacing' /></div> })}
                 </div>
