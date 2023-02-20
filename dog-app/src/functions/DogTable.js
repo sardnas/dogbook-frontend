@@ -6,15 +6,23 @@ import DogStats from '../pages/DogStats';
 class DogTable extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
+        //console.log(this.props.data[0]);
 
         this.state = ({
-            currentDog: []
+            currentDog: [this.props.data[0].breed_name,
+            this.props.data[0].height_low_inches,
+            this.props.data[0].height_high_inches,
+            this.props.data[0].weight_low_lbs,
+            this.props.data[0].weight_high_lbs,
+            this.props.data[0].breed_classification,
+            this.props.data[0].breed_obey,
+            this.props.data[0].reps_lower,
+            this.props.data[0].reps_upper]
         })
     }
 
     updateContent = (dogObject) => {
-        console.log(dogObject);
+        //console.log(dogObject);
         this.setState({
             currentDog: [dogObject.breed_name,
             dogObject.height_low_inches,
@@ -37,7 +45,7 @@ class DogTable extends Component {
                     {this.props.data.map(element => { return <div><div onClick={() => this.updateContent(element)} className='dogRow'>{element.breed_name}</div><div className='verticalSpacing' /></div> })}
                 </div>
                 <div className='dogContainer'>
-                    <div>{this.state.currentDog}</div>
+                    <DogStats dog={this.state.currentDog}></DogStats>
                 </div>
             </div>
         );
