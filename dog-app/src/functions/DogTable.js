@@ -1,6 +1,7 @@
 import '../styles/DogTable.css';
 import { useState, useEffect } from "react";
 import React, { Component } from 'react';
+import DogStats from '../pages/DogStats';
 
 class DogTable extends Component {
     constructor(props) {
@@ -8,12 +9,23 @@ class DogTable extends Component {
         console.log(props);
 
         this.state = ({
-            message: "d"
+            currentDog: []
         })
     }
 
     updateContent = (dogObject) => {
-        this.setState({ message: dogObject.breed_name });
+        console.log(dogObject);
+        this.setState({
+            currentDog: [dogObject.breed_name,
+            dogObject.height_low_inches,
+            dogObject.height_high_inches,
+            dogObject.weight_low_lbs,
+            dogObject.weight_high_lbs,
+            dogObject.breed_classification,
+            dogObject.breed_obey,
+            dogObject.reps_lower,
+            dogObject.reps_upper]
+        });
     }
 
     render() {
@@ -24,25 +36,16 @@ class DogTable extends Component {
                     <div className='verticalSpacing' />
                     {this.props.data.map(element => { return <div><div onClick={() => this.updateContent(element)} className='dogRow'>{element.breed_name}</div><div className='verticalSpacing' /></div> })}
                 </div>
-                <dogInfo />
                 <div className='dogContainer'>
-                    {this.state.message}
+                    <div>{this.state.currentDog}</div>
                 </div>
             </div>
         );
     }
 }
 
-const DogRow = ({ dog }) => {
-    return <div><div className='dogRow'>{dog.breed_name}</div><div className='verticalSpacing' /></div>;
-}
-
-const handleOnClick = (dog) => {
-    dogInfo(dog);
-}
-
 const dogInfo = (dog) => {
-    return <div>gghhhhhhhhhh</div>;
+    return <div>jjjjjj</div>;
 }
 
 export default DogTable;

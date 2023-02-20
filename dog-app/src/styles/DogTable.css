@@ -68,5 +68,6 @@
     position: sticky;
     top: 1rem;
     margin-left: 2rem;
-    background-color: green;
+    background-color: grey;
+    border-radius: 1rem;
 }
