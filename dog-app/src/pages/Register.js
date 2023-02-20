@@ -16,17 +16,14 @@ const Register = () => {
     const onUsernameChange = event => {
         setUsername(event.target.value);
     };
-    console.log(inputUsername);
 
     const onEmailChange = event => {
         setEmail(event.target.value);
     };
-    console.log(inputPassword);
 
     const onPasswordChange = event => {
         setPassword(event.target.value);
     };
-    console.log(inputPassword);
 
     const handleOnRegister = () => {
         PostRegisterDetails();

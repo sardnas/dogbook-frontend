@@ -6,7 +6,6 @@ import DogStats from '../pages/DogStats';
 class DogTable extends Component {
     constructor(props) {
         super(props);
-        //console.log(this.props.data[0]);
 
         this.state = ({
             currentDog: [this.props.data[0].breed_name,
@@ -22,7 +21,6 @@ class DogTable extends Component {
     }
 
     updateContent = (dogObject) => {
-        //console.log(dogObject);
         this.setState({
             currentDog: [dogObject.breed_name,
             dogObject.height_low_inches,
@@ -50,10 +48,6 @@ class DogTable extends Component {
             </div>
         );
     }
-}
-
-const dogInfo = (dog) => {
-    return <div>jjjjjj</div>;
 }
 
 export default DogTable;

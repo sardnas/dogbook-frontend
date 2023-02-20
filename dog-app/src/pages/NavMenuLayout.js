@@ -2,16 +2,21 @@ import { Link } from "react-router-dom";
 import '../styles/Menu.css';
 import React from "react";
 import Cookies from "universal-cookie";
+import whitedog from '../styles/whitedog.svg';
 
 const NavMenuLayout = () => {
     const cookies = new Cookies();
     const userInfo = cookies.get("userInfo");
     const isLoggedIn = userInfo !== undefined && userInfo != null;
-    //console.log(userInfo);
     return (
         <>
             <div className="MenuContainer">
+
                 <div className="MenuComponentLeft">
+                    <div className="logo marginTop">
+                        <img src={whitedog} />
+                    </div>
+                    <div></div>
                     <div className="LinkContainer">
                         <Link className="link" to="/user">Start</Link>
                     </div>

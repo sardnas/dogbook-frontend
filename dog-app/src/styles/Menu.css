@@ -2,16 +2,22 @@
     width: 100%;
     font-size: 1.3rem;
     margin-top: 1rem;
+    height: 2rem;
+
 }
 
 .MenuComponentLeft {
     color: green;
     float: left;
+    display: flex;
+    flex-direction: row;
 }
 
 .MenuComponentRight {
     color: white;
     float: right;
+
+
 }
 
 .LinkContainer {
@@ -25,9 +31,18 @@
     margin-right: 1rem;
 }
 
+.marginTop {
+    margin-top: calc(-7.5px);
+    margin-left: 1rem;
+}
+
 .link {
     text-decoration: none;
     display: block;
     width: 100%;
     color: white;
+}
+
+.logo {
+    width: 2.5rem;
 }

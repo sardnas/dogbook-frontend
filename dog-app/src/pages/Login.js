@@ -15,13 +15,11 @@ const Login = () => {
     const onUsernameChange = event => {
         setUsername(event.target.value);
     };
-    console.log(inputUsername);
 
 
     const onPasswordChange = event => {
         setPassword(event.target.value);
     };
-    console.log(inputPassword);
 
     const handleOnLogin = () => {
         PostLoginDetails();
@@ -36,9 +34,6 @@ const Login = () => {
             if (response.status === 200) {
                 let json = await response.json(); //we want to parse the response body as json if it was a sucess
 
-                //console.log(json); //don't publish code with this line! I just added it here to show that
-                //it can be quite usefull to write the value of the json object to the console
-                //you could try to write out the value of response too if there is something that is not working
                 cookies.set("userInfo", json, {
                     path: "/",
                     sameSite: "none",

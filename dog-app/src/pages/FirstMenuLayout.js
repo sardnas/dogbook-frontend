@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import '../styles/Menu.css';
+import whitedog from '../styles/whitedog.svg';
 
 import React from "react";
 const NavMenuLayout = () => {
@@ -7,6 +8,9 @@ const NavMenuLayout = () => {
         <>
             <div className="MenuContainer">
                 <div className="MenuComponentLeft">
+                    <div className="logo marginTop">
+                        <img src={whitedog} />
+                    </div>
                     <div className="LinkContainer">
                         <Link className="link" to="/">Start</Link>
                     </div>

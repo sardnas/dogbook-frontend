@@ -3,6 +3,7 @@ import { Doughnut, Line } from "react-chartjs-2";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import React from "react";
 import '../styles/DogStats.css';
+import corgi from '../styles/icons8-corgi.gif';
 ChartJS.register(...registerables);
 ChartJS.register(ChartDataLabels);
 
@@ -39,8 +40,8 @@ const DogStats = (obj) => {
 
 
     return (
-        <>
-            <h1 className="text">{name}</h1>
+        <><div className="rubric"><img className="margin" src={corgi} /><h1 className="text">{name}</h1></div>
+
             <div className="verticalSpacingInf" />
             <div className="container">
                 <div className="containerRow">
