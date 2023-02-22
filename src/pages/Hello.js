@@ -8,7 +8,7 @@ const Hello = () => {
                 API was built with Java Spring Boot. PostgreSQL was used
                 for the database.</p>
             <p>https://github.com/sardnas/springboot-dog-app</p>
-            <p>Everything was done by Sandra Reinecke, IT-consultant trainee at Consid.</p>
+            <p>Everything was done by Sandra Reinecke, IT-consultant trainee at Consid. </p>
         </>
     );
 };
