@@ -1,16 +1,9 @@
-/*
-import { Chart as ChartJS, registerables } from "chart.js";
-import { Doughnut, Line } from "react-chartjs-2";
-import ChartDataLabels from 'chartjs-plugin-datalabels';
-*/
+
 import '../styles/DogStats.css';
 import corgi from '../styles/icons8-corgi.gif';
-import React, { PureComponent } from 'react';
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
-/*
-ChartJS.register(...registerables);
-ChartJS.register(ChartDataLabels);
-*/
+import React from 'react';
+import DonutChart from './DonutChart';
+
 const DogStats = (obj) => {
     const name = obj.dog[0];
     const min_height = Math.round(obj.dog[1] * 2.54 * 100) / 100;
@@ -22,33 +15,13 @@ const DogStats = (obj) => {
     const obey_inv = 100 - obey;
     const min_reps = obj.dog[7];
     const max_reps = obj.dog[8];
-    /*
-        const doughnutData = {
-            labels: ['% Probability to disobey', '% Probability to obey'],
-            datasets: [
-                {
-                    label: '',
-                    data: [obey_inv, obey],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(75, 192, 192, 1)',
-                    ],
-                    borderWidth: 1,
-                },
-            ],
-        };
-    */
 
     const data = [
         { name: 'Group A', value: obey },
         { name: 'Group B', value: obey_inv },
     ];
 
-    const COLORS = ['#0088FE', '#00C49F'];
+    const COLORS = ['#99AA38', '#FF6666'];
 
     const RADIAN = Math.PI / 180;
     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
@@ -70,24 +43,7 @@ const DogStats = (obj) => {
             <div className="container">
                 <div className="containerRow">
                     <div className="infoBox">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <PieChart width={400} height={400}>
-                                <Pie
-                                    data={data}
-                                    cx="50%"
-                                    cy="50%"
-                                    labelLine={false}
-                                    label={renderCustomizedLabel}
-                                    outerRadius={80}
-                                    fill="#8884d8"
-                                    dataKey="value"
-                                >
-                                    {data.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                                    ))}
-                                </Pie>
-                            </PieChart>
-                        </ResponsiveContainer>
+                        <DonutChart obey={obey} />
                     </div>
                     <div className="infoBoxText">
                         <h2 className="text">{classification}</h2>
