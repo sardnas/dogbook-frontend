@@ -7,7 +7,8 @@ const Hello = () => {
             <p>This client was built with JavaScript & React and the
                 API was built with Java Spring Boot. PostgreSQL was used
                 for the database.</p>
-            <p>https://github.com/sardnas/springboot-dog-app</p>
+            <p>Backend repository: https://github.com/sardnas/springboot-dog-app</p>
+            <p>Frontend repository: https://github.com/sardnas/springboot-dog-app-frontend</p>
             <p>Everything was done by Sandra Reinecke, IT-consultant trainee at Consid. </p>
         </>
     );
