@@ -39,7 +39,7 @@ export async function SignIn(username, password) {
   });
 }
 
-const publishedBasePath = "https://obviouslyfakedomainname.se/dog-info-api";
+const publishedBasePath = "https://springboot-dog-app-rlcqt.kinsta.app/";
 const localBasePath = "http://localhost:8080";
 
 let requestBasePath = null;
