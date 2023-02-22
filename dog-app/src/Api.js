@@ -39,12 +39,8 @@ export async function SignIn(username, password) {
   });
 }
 
-//below is code to make it easier to have one base path when you are developing locally and one when the site is published
-//it is because maybe you want to use a locally hosted webapi when developing to make it easier to debug
-//but obviously you don't want to use that locally hosted webapi when you have published the site
-
 const publishedBasePath = "https://obviouslyfakedomainname.se/dog-info-api";
-const localBasePath = "http://localhost:8080"; // <---- change this to the path of your locally hosted webapi (!!)
+const localBasePath = "http://localhost:8080";
 
 let requestBasePath = null;
 
@@ -54,14 +50,7 @@ export function CreateBasePath() {
   //this if-statement will check if this is running as development process
   if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
     //use local address if development
-    requestBasePath = localBasePath; //whatever path you're hosting your api locally on
-
-    //you can comment out the line of code above if you want to use the production webapi when developing locally
-
-    //care of the s in "https". It can cause problems, at the same time, only having "http" can also cause problems
-    //"http" can cause problems because mixed content loading is not allowed
-    //"https" can cause problems because there needs to be a valid and trusted ssl certificate
-    //Sometimes this can appear as a CORS error when it's actually a SSL error
+    requestBasePath = localBasePath;
   }
 }
 

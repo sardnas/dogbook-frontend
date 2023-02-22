@@ -6,23 +6,20 @@ import React from "react";
 import Signout from "./Signout";
 
 const Dogopedia = () => {
-  const [shouldFetchBreeds, setShouldFetchBreeds] = useState(true); //true because it should fetch the breeds when the page loads
-  const [errorFetchingBreeds, setErrorFetchingBreeds] = useState(false); //false because no error has occured when the page loads
-  const [breeds, setBreeds] = useState(null); //null because there is no breeds data yet
+  const [shouldFetchBreeds, setShouldFetchBreeds] = useState(true);
+  const [errorFetchingBreeds, setErrorFetchingBreeds] = useState(false);
+  const [breeds, setBreeds] = useState(null);
 
   useEffect(() => {
-    //this is a function that will call the api function for fetching breeds and handle the response
     async function FetchBreeds() {
       try {
         let response = await GetBreeds();
 
-        //check if the response was a sucess, 200 means that it was
         if (response.status === 200) {
-          let json = await response.json(); //we want to parse the response body as json if it was a sucess
+          let json = await response.json();
 
-          setBreeds(json); //save the data we have gotten
+          setBreeds(json);
         } else if (response.status === 400) {
-          //we can check for specific error codes like this
           alert(
             "400 means that the server thinks this request was invalid because of missing or invalid input"
           );
@@ -38,12 +35,11 @@ const Dogopedia = () => {
       }
     }
 
-    //it is important to remember to actually call the function declared above :weary:
     if (shouldFetchBreeds) {
       setShouldFetchBreeds(false);
       FetchBreeds();
     }
-  }, [shouldFetchBreeds, breeds]); //this is a dependency array, it tells react what values it should watch for updates
+  }, [shouldFetchBreeds, breeds]);
 
   console.log(errorFetchingBreeds);
 
@@ -58,7 +54,7 @@ const Dogopedia = () => {
       {breeds ? ( //if breeds exist we want to display them
         <>
           <DogTablePage dogs={breeds} /></>
-      ) : errorFetchingBreeds ? ( //if breeds don't exist we display a message based on if there has been an error or not
+      ) : errorFetchingBreeds ? (
         <div>
           something went terribly, terribly wrong when fetching breeds 😞
         </div>
