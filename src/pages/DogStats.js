@@ -3,6 +3,7 @@ import '../styles/DogStats.css';
 import corgi from '../styles/icons8-corgi.gif';
 import React from 'react';
 import DonutChart from './DonutChart';
+import WeightChart from './WeightChart';
 
 const DogStats = (obj) => {
     const name = obj.dog[0];
@@ -16,9 +17,12 @@ const DogStats = (obj) => {
     const min_reps = obj.dog[7];
     const max_reps = obj.dog[8];
 
+    console.log("max height " + max_height);
+    console.log("max weight " + max_weight);
+
     const data = [
-        { name: 'Group A', value: obey },
-        { name: 'Group B', value: obey_inv },
+        { name: 'Obey', value: obey },
+        { name: 'Disobey', value: obey_inv },
     ];
 
     const COLORS = ['#99AA38', '#FF6666'];
@@ -36,28 +40,31 @@ const DogStats = (obj) => {
         );
     };
 
+    console.log("DogStats obey: " + obey);
     return (
         <><div className="rubric"><img className="margin" src={corgi} /><h1 className="text">{name}</h1></div>
 
             <div className="verticalSpacingInf" />
             <div className="container">
                 <div className="containerRow">
-                    <div className="infoBox">
-                        <DonutChart obey={obey} />
+                    <div className="statBox">
+                        <DonutChart data={data} />
                     </div>
-                    <div className="infoBoxText">
-                        <h2 className="text">{classification}</h2>
-                        <p className="text">Requiers between {min_reps} and {max_reps} reps to learn a new command.</p>
+                    <div className='marginTop'>
+                        <WeightChart maxWeight={max_weight} maxSize={max_height} breed={name}></WeightChart>
                     </div>
                 </div>
                 <div className="verticalSpacingInf" />
                 <div className="containerRow">
-                    <div className="infoBoxText">
+                    <div className="infoBoxText marginLeft">
+                        <h2 className="text">{classification}</h2>
+                        <p className="text">Requiers between {min_reps} and {max_reps} reps to learn a new command.</p>
+                    </div>
+                    <div className="infoBoxText marginLeftSmall">
                         <h2 className="text">Size and weight:</h2>
                         <p className="text">Weight: {min_weight} kg - {max_weight} kg</p>
                         <p className="text">Size: {min_height} cm - {max_height} cm</p>
                     </div>
-                    <div className="infoBox"></div>
                 </div>
             </div>
         </>

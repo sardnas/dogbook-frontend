@@ -5,14 +5,16 @@
 .infoBox {
     width: 17rem;
     height: 17rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
+}
+
+.statBox {
+    width: 35rem;
+    height: 20rem;
 }
 
 .infoBoxText {
     width: 25rem;
     height: 17rem;
-    margin-right: 4rem;
 }
 
 .text {
@@ -35,10 +37,27 @@
     grid-auto-flow: column;
     grid-auto-columns: max-content;
     grid-auto-rows: min-content;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    background-color: white;
+    border-radius: 1rem;
 }
 
 .margin {
     margin-right: 1rem;
     margin-left: 2rem;
     margin-top: 11%;
+}
+
+.marginLeft {
+    margin-left: 6.5rem;
+}
+
+.marginLeftSmall {
+    margin-left: 3rem;
+}
+
+.marginTop {
+    margin-top: 3rem;
 }

@@ -63,12 +63,12 @@
 }
 
 .dogContainer {
-    width: 50rem;
-    height: 40rem;
+    width: 60rem;
+    height: 50rem;
     position: sticky;
     top: 1rem;
     margin-left: 2rem;
-    background-color: white;
+    background-color: #D3D3D3;
     border-radius: 1rem;
 
 }
