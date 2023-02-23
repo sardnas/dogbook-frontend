@@ -12,11 +12,11 @@ export async function GetBreeds() {
   });
 }
 
-//will create a new breed
-export async function CreateBreed(name, color, trainability) {
+//put breed favorite
+export async function CreateBreed(user, breed) {
   return await fetch(GetBasePath() + "/api/breeds/create", {
     method: "POST",
-    body: JSON.stringify({ name, color, trainability }),
+    body: JSON.stringify({ user, breed }),
     headers: { "Content-Type": "application/json" },
   });
 }

@@ -4,6 +4,7 @@ import corgi from '../styles/icons8-corgi.gif';
 import React from 'react';
 import DonutChart from './DonutChart';
 import WeightChart from './WeightChart';
+import HeartButton from './HeartButton';
 
 const DogStats = (obj) => {
     const name = obj.dog[0];
@@ -16,9 +17,6 @@ const DogStats = (obj) => {
     const obey_inv = 100 - obey;
     const min_reps = obj.dog[7];
     const max_reps = obj.dog[8];
-
-    console.log("max height " + max_height);
-    console.log("max weight " + max_weight);
 
     const data = [
         { name: 'Obey', value: obey },
@@ -40,9 +38,8 @@ const DogStats = (obj) => {
         );
     };
 
-    console.log("DogStats obey: " + obey);
     return (
-        <><div className="rubric"><img className="margin" src={corgi} /><h1 className="text">{name}</h1></div>
+        <><div className="rubric"><HeartButton dog={name} /><img className="margin" src={corgi} /><h1 className="text">{name}</h1></div>
 
             <div className="verticalSpacingInf" />
             <div className="container">
@@ -65,6 +62,7 @@ const DogStats = (obj) => {
                         <p className="text">Weight: {min_weight} kg - {max_weight} kg</p>
                         <p className="text">Size: {min_height} cm - {max_height} cm</p>
                     </div>
+
                 </div>
             </div>
         </>
