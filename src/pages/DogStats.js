@@ -50,7 +50,7 @@ const DogStats = (obj) => {
                     <div className="statBox">
                         <DonutChart data={data} />
                     </div>
-                    <div className='marginTop'>
+                    <div className='marginTops'>
                         <WeightChart maxWeight={max_weight} maxSize={max_height} breed={name}></WeightChart>
                     </div>
                 </div>
