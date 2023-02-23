@@ -1,6 +1,7 @@
 import React from "react";
 import Signout from "./Signout";
 import Cookies from "universal-cookie";
+import InterActiveCubes from "./InterActiveCubes";
 
 const Start = () => {
   const cookies = new Cookies();
@@ -10,6 +11,7 @@ const Start = () => {
     <>
       <Signout />
       <h1>Welcome {userInfo.username}!</h1>
+      <InterActiveCubes></InterActiveCubes>
     </>
   );
 };
