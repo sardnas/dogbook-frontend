@@ -5,6 +5,7 @@ import DogTable from "../functions/DogTable";
 import React from "react";
 import Signout from "./Signout";
 import Cookies from "universal-cookie";
+import { DotLoader } from "react-spinners";
 
 const MyDogs = () => {
   const [shouldFetchBreeds, setShouldFetchBreeds] = useState(true);
@@ -65,7 +66,7 @@ const MyDogs = () => {
           something went terribly, terribly wrong when fetching breeds 😞
         </div>
       ) : (
-        <div>loading breeds... ✋🤠👉⌛</div>
+        <DotLoader color="#c9c7c7" />
       )}
     </>
   );
