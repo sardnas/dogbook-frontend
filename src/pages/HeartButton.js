@@ -13,13 +13,7 @@ function HeartButton(props) {
     secure: true,
   });
   const token = userInfo.accessToken;
-  /* fix this
-    async function FetchFavorites() {
-      let response = await GetFavorites(token);
-      console.log(response);
-    }
-    FetchFavorites()
-  */
+
   useEffect(() => {
 
     setActive(false);
@@ -40,23 +34,49 @@ function HeartButton(props) {
   );
 }
 
-export default HeartButton;
+const MyFavoriteDogs = (token) => {
+  const [shouldFetchBreeds, setShouldFetchBreeds] = useState(true);
+  const [errorFetchingBreeds, setErrorFetchingBreeds] = useState(false);
+  const [breeds, setBreeds] = useState(null);
 
-/* CSS
-.customHeart:hover {
-  fill: #c9c7c7 !important;
-  transition: fill 0.1s;
-}
-.customHeart:active {
-  fill: #a5a5a5 !important;
-  transition: fill 0.1s;
-}
-.active.customHeart:hover {
-  fill: rgb(205, 3, 3) !important;
-  transition: fill 0.1s;
-}
-.active.customHeart:active {
-  fill: rgb(155, 6, 6) !important;
-  transition: fill 0.1s;
-}
-*/
+  useEffect(() => {
+    async function FetchBreeds() {
+      try {
+        let response = await GetFavorites(token);
+
+        if (response.status === 200) {
+          let json = await response.json();
+
+          setBreeds(json);
+          console.log(json); // TODO: Fix bug with double dogs
+        } else if (response.status === 400) {
+          alert(
+            "400 means that the server thinks this request was invalid because of missing or invalid input"
+          );
+          setErrorFetchingBreeds(true); //set error value
+        } else {
+          alert("An unknown error occured");
+          setErrorFetchingBreeds(true); //set error value
+        }
+      } catch (e) {
+        console.error("There was an error when fetching the breeds! :-(");
+        console.error(e);
+        setErrorFetchingBreeds(true); //set error value
+      }
+    }
+
+    if (shouldFetchBreeds) {
+      setShouldFetchBreeds(false);
+      FetchBreeds();
+    }
+  }, [shouldFetchBreeds, breeds]);
+
+  console.log(errorFetchingBreeds);
+
+  return (
+    <>
+    </>
+  );
+};
+
+export default HeartButton;
