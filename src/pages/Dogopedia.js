@@ -4,6 +4,7 @@ import '../styles/Dogopedia.css';
 import DogTable from "../functions/DogTable";
 import React from "react";
 import Signout from "./Signout";
+import { DotLoader } from "react-spinners";
 
 const Dogopedia = () => {
   const [shouldFetchBreeds, setShouldFetchBreeds] = useState(true);
@@ -56,7 +57,7 @@ const Dogopedia = () => {
           something went terribly, terribly wrong when fetching breeds 😞
         </div>
       ) : (
-        <div>loading breeds... ✋🤠👉⌛</div>
+        <DotLoader color="#c9c7c7" />
       )}
     </>
   );

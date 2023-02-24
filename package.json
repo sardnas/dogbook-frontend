@@ -16,6 +16,7 @@
     "react-heart": "^1.0.6",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
+    "react-spinners": "^0.13.8",
     "recharts": "^2.4.3",
     "three": "^0.150.0",
     "universal-cookie": "^4.0.4",
