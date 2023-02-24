@@ -43,9 +43,6 @@ const Dogopedia = () => {
 
   console.log(errorFetchingBreeds);
 
-  const getHeadings = () => {
-    return Object.keys(breeds[0]);
-  }
   return (
     <>
       <Signout />

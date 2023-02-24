@@ -1,19 +1,43 @@
 import Heart from "react-heart"
 import '../styles/HeartButton.css';
 import { useEffect, useState } from "react";
+import { PutFavorite, GetFavorites } from "../Api";
+import Cookies from "universal-cookie";
 
 function HeartButton(props) {
-    const [active, setActive] = useState(false)
-    useEffect(() => {
-        setActive(false);
-    }, [props]);
-    return (
-        <div style={{
-            width: "1.5rem", margin: "1.6rem",
-        }}>
-            <Heart isActive={active} onClick={() => setActive(!active)} animationScale={1.2} animationTrigger="both" animationDuration={.2} className={`customHeart${active ? " active" : ""}`} />
-        </div >
-    );
+  const [active, setActive] = useState(false)
+  const cookies = new Cookies();
+  const userInfo = cookies.get("userInfo", {
+    path: "/",
+    sameSite: "none",
+    secure: true,
+  });
+  const token = userInfo.accessToken;
+  /* fix this
+    async function FetchFavorites() {
+      let response = await GetFavorites(token);
+      console.log(response);
+    }
+    FetchFavorites()
+  */
+  useEffect(() => {
+
+    setActive(false);
+  }, [props]);
+
+  useEffect(() => {
+    if (active) {
+      PutFavorite(props.data.dog[9], token);
+    }
+
+  }, [active]);
+  return (
+    <div style={{
+      width: "1.5rem", margin: "1.6rem",
+    }}>
+      <Heart isActive={active} onClick={() => setActive(!active)} animationScale={1.2} animationTrigger="both" animationDuration={.2} className={`customHeart${active ? " active" : ""}`} />
+    </div >
+  );
 }
 
 export default HeartButton;

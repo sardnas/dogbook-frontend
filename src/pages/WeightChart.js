@@ -2,7 +2,6 @@ import React from 'react';
 import { ScatterChart, Scatter, XAxis, YAxis, ZAxis, CartesianGrid, Tooltip, Cell } from 'recharts';
 
 export default function WeightChart(properties) {
-    console.log(properties.maxWeight);
     const size = properties.maxSize;
     const weight = properties.maxWeight;
     const breed = properties.breed;

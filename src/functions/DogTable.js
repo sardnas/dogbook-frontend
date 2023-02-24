@@ -6,7 +6,6 @@ import DogStats from '../pages/DogStats';
 class DogTable extends Component {
     constructor(props) {
         super(props);
-
         this.state = ({
             currentDog: [this.props.data[0].breed_name,
             this.props.data[0].height_low_inches,
@@ -16,7 +15,8 @@ class DogTable extends Component {
             this.props.data[0].breed_classification,
             this.props.data[0].breed_obey,
             this.props.data[0].reps_lower,
-            this.props.data[0].reps_upper]
+            this.props.data[0].reps_upper,
+            this.props.data[0].breed_id]
         })
     }
 
@@ -30,7 +30,8 @@ class DogTable extends Component {
             dogObject.breed_classification,
             dogObject.breed_obey,
             dogObject.reps_lower,
-            dogObject.reps_upper]
+            dogObject.reps_upper,
+            dogObject.breed_id]
         });
     }
 

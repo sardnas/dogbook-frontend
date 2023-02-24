@@ -39,7 +39,7 @@ const DogStats = (obj) => {
     };
 
     return (
-        <><div className="rubric"><HeartButton dog={name} /><img className="margin" src={corgi} /><h1 className="text">{name}</h1></div>
+        <><div className="rubric"><HeartButton data={obj} /><img className="margin" src={corgi} /><h1 className="text">{name}</h1></div>
 
             <div className="verticalSpacingInf" />
             <div className="container">

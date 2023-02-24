@@ -1,3 +1,5 @@
+
+
 //will get a breed from the webapi based on breed id
 export async function GetBreedById(breedId) {
   return await fetch(GetBasePath() + "/api/breeds/" + breedId, {
@@ -13,11 +15,18 @@ export async function GetBreeds() {
 }
 
 //put breed favorite
-export async function CreateBreed(user, breed) {
-  return await fetch(GetBasePath() + "/api/breeds/create", {
+export async function PutFavorite(breedId, token) {
+  return await fetch(GetBasePath() + "/api/breeds/favorites/" + breedId, {
     method: "POST",
-    body: JSON.stringify({ user, breed }),
-    headers: { "Content-Type": "application/json" },
+    headers: { "Authorization": "Bearer " + token },
+  });
+}
+
+//get favorites
+export async function GetFavorites(token) {
+  return await fetch(GetBasePath() + "/api/breeds/favorites", {
+    method: "GET",
+    headers: { "Authorization": "Bearer " + token },
   });
 }
 
