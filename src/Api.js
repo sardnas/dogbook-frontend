@@ -22,6 +22,14 @@ export async function PutFavorite(breedId, token) {
   });
 }
 
+//remove breed favorite
+export async function RemoveFavorite(breedId, token) {
+  return await fetch(GetBasePath() + "/api/breeds/favorites/delete/" + breedId, {
+    method: "POST",
+    headers: { "Authorization": "Bearer " + token },
+  });
+}
+
 //get favorites
 export async function GetFavorites(token) {
   return await fetch(GetBasePath() + "/api/breeds/favorites", {

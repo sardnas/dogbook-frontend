@@ -64,7 +64,7 @@
 
 .dogContainer {
     width: 60rem;
-    height: 45rem;
+    height: min-content;
     position: sticky;
     top: 1rem;
     margin-left: 2rem;

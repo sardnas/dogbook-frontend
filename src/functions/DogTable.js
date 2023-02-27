@@ -6,18 +6,27 @@ import DogStats from '../pages/DogStats';
 class DogTable extends Component {
     constructor(props) {
         super(props);
-        this.state = ({
-            currentDog: [this.props.data[0].breed_name,
-            this.props.data[0].height_low_inches,
-            this.props.data[0].height_high_inches,
-            this.props.data[0].weight_low_lbs,
-            this.props.data[0].weight_high_lbs,
-            this.props.data[0].breed_classification,
-            this.props.data[0].breed_obey,
-            this.props.data[0].reps_lower,
-            this.props.data[0].reps_upper,
-            this.props.data[0].breed_id]
-        })
+        console.log(props);
+        if (props.data[0]) {
+            console.log("inside if");
+            this.state = ({
+                currentDog: [this.props.data[0].breed_name,
+                this.props.data[0].height_low_inches,
+                this.props.data[0].height_high_inches,
+                this.props.data[0].weight_low_lbs,
+                this.props.data[0].weight_high_lbs,
+                this.props.data[0].breed_classification,
+                this.props.data[0].breed_obey,
+                this.props.data[0].reps_lower,
+                this.props.data[0].reps_upper,
+                this.props.data[0].breed_id]
+            })
+        } else {
+            this.state = (
+                { currentDog: [] }
+            )
+        }
+
     }
 
     updateContent = (dogObject) => {

@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { GetFavorites } from "../Api";
-import '../styles/Dogopedia.css';
-import DogTable from "../functions/DogTable";
 import React from "react";
 import Signout from "./Signout";
 import Cookies from "universal-cookie";
 import { DotLoader } from "react-spinners";
+import DogTable from "../functions/DogTable";
+import '../styles/Dogopedia.css';
 
 const MyDogs = () => {
   const [shouldFetchBreeds, setShouldFetchBreeds] = useState(true);
@@ -28,7 +28,6 @@ const MyDogs = () => {
           let json = await response.json();
 
           setBreeds(json);
-          console.log(json); // TODO: Fix bug with double dogs
         } else if (response.status === 400) {
           alert(
             "400 means that the server thinks this request was invalid because of missing or invalid input"
@@ -57,7 +56,6 @@ const MyDogs = () => {
     <>
       <Signout />
       <h1>My dogs</h1>
-
       {breeds ? ( //if breeds exist we want to display them
         <>
           <DogTablePage dogs={breeds} /></>
@@ -75,5 +73,6 @@ const MyDogs = () => {
 const DogTablePage = ({ dogs }) => {
   return <div className="dogTablePage"><div className="horizontalSpacing"></div><DogTable data={dogs} /></div>;
 }
+
 
 export default MyDogs;
