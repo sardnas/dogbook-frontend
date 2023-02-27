@@ -11,6 +11,7 @@ const Dogopedia = () => {
   const [errorFetchingBreeds, setErrorFetchingBreeds] = useState(false);
   const [breeds, setBreeds] = useState(null);
 
+
   useEffect(() => {
     async function FetchBreeds() {
       try {
@@ -64,7 +65,8 @@ const Dogopedia = () => {
 };
 
 const DogTablePage = ({ dogs }) => {
-  return <div className="dogTablePage"><div className="horizontalSpacing"></div><DogTable data={dogs} /></div>;
+  const myDogs = false;
+  return <div className="dogTablePage"><div className="horizontalSpacing"></div><DogTable data={[dogs, myDogs]} /></div>;
 }
 
 export default Dogopedia;

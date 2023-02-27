@@ -68,7 +68,7 @@ const DogStats = (obj) => {
                     </div>
                 </div></>
         ) : (
-            <div className="rubric"><img className="margin marginLeft" src={corgi} /><h1 className="text">No dogs could be found!</h1></div>
+            <div className="rubric"><img className="margin marginLeft" src={corgi} /><h1 className="text">No dogs could be found...</h1></div>
         )}
         </>
     );

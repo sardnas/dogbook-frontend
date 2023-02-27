@@ -71,7 +71,7 @@ const MyDogs = () => {
 };
 
 const DogTablePage = ({ dogs }) => {
-  return <div className="dogTablePage"><div className="horizontalSpacing"></div><DogTable data={dogs} /></div>;
+  return <div className="dogTablePage"><div className="horizontalSpacing"></div><DogTable data={[dogs, true]} /></div>;
 }
 
 

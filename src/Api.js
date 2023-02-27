@@ -38,6 +38,13 @@ export async function GetFavorites(token) {
   });
 }
 
+// search in dogopedia
+export async function SearchDogopedia(searchString) {
+  return await fetch(GetBasePath() + "/api/breeds/search/" + searchString, {
+    method: "POST",
+  });
+}
+
 // Become memmber
 export async function CreateUser(username, email, password) {
   return await fetch(GetBasePath() + "/api/auth/signup", {
