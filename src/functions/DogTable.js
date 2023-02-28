@@ -51,10 +51,15 @@ class DogTable extends Component {
         });
     }
     handleOnChange = (event) => {
-        this.setState({ searchFilter: event.target.value });
+        if (event.target.value) {
+            this.setState({ searchFilter: event.target.value });
+        } else {
+            this.setState({ searchFilter: "" });
+            this.search = false;
+        }
     }
 
-    onSearch = (event) => {
+    onSearch = () => {
         if (this.state.searchFilter.length != 0 && !this.state.myDogs) {
             const searchString = this.state.searchFilter;
             let searchRes = [];
@@ -93,7 +98,7 @@ class DogTable extends Component {
                 <div className='horizontallyCenter'>
                     <div className='dogOuterContainer'>
                         <div className='dogTableColumn'>
-                            <input value={this.state.searchFilter} onChange={this.handleOnChange} onKeyDown={this.onSearch} className='dogTableSearchBar' id="search" type="text" placeholder='Search for dog' />
+                            <input value={this.state.searchFilter} onChange={this.handleOnChange} onKeyUp={this.onSearch} className='dogTableSearchBar' id="search" type="text" placeholder='Search for dog' />
                             <div className='verticalSpacing' />
                             {!this.search ? (
                                 <>{this.props.data[0].map(element => { return <div><div onClick={() => this.updateContent(element)} className='dogRow'>{element.breed_name}</div><div className='verticalSpacing' /></div> })}</>
