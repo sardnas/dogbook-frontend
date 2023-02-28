@@ -4,12 +4,14 @@ import '../styles/Register.css';
 import React from "react";
 import { useNavigate } from "react-router";
 import Cookies from "universal-cookie";
+import { DotLoader } from "react-spinners";
 
 const Register = () => {
     const [inputUsername, setUsername] = useState("");
     const [inputEmail, setEmail] = useState("");
     const [inputPassword, setPassword] = useState("");
     const [errorRegister, setErrorRegister] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const cookies = new Cookies();
 
@@ -26,7 +28,14 @@ const Register = () => {
     };
 
     const handleOnRegister = () => {
+        setIsLoading(true);
         PostRegisterDetails();
+    }
+
+    const handleEnter = (e) => {
+        if (e.key === 'Enter') {
+            handleOnRegister();
+        }
     }
 
     async function PostRegisterDetails() {
@@ -66,12 +75,17 @@ const Register = () => {
     return (
         <>
             <h1>Create account</h1>
-            <div className="RegisterContainer">
-                <input onChange={onUsernameChange} value={inputUsername} className="Input" type="text" placeholder='Username' />
-                <input onChange={onEmailChange} value={inputEmail} className="Input" type="text" placeholder='Email' />
-                <input onChange={onPasswordChange} value={inputPassword} className="Input" type="password" placeholder='Password' />
-                <button onClick={handleOnRegister} className="Button">Submit</button>
-            </div>
+            {!isLoading ? (
+                <>
+                    <div className="RegisterContainer">
+                        <input onChange={onUsernameChange} value={inputUsername} className="Input" type="text" placeholder='Username' />
+                        <input onChange={onEmailChange} value={inputEmail} className="Input" type="text" placeholder='Email' />
+                        <input onKeyUp={handleEnter} onChange={onPasswordChange} value={inputPassword} className="Input" type="password" placeholder='Password' />
+                        <button onClick={handleOnRegister} className="Button">Submit</button>
+                    </div>
+                </>
+            ) : (<><DotLoader color="#c9c7c7" /></>)}
+
         </>
     );
 };

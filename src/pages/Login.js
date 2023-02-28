@@ -28,6 +28,12 @@ const Login = () => {
         PostLoginDetails();
     }
 
+    const handleEnter = (e) => {
+        if (e.key === 'Enter') {
+            handleOnLogin();
+        }
+    }
+
 
     async function PostLoginDetails() {
         try {
@@ -70,7 +76,7 @@ const Login = () => {
                 <>
                     <div className="RegisterContainer">
                         <input onChange={onUsernameChange} value={inputUsername} className="Input" type="text" placeholder='Username' />
-                        <input onChange={onPasswordChange} value={inputPassword} className="Input" type="password" placeholder='Password' />
+                        <input onKeyUp={handleEnter} onChange={onPasswordChange} value={inputPassword} className="Input" type="password" placeholder='Password' />
                         <button onClick={handleOnLogin} className="Button">Submit</button>
                     </div>
                 </>
