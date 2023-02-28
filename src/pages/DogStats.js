@@ -44,6 +44,7 @@ const DogStats = (obj) => {
                 <div className="rubric"><HeartButton data={obj} /><img className="margin" src={corgi} /><h1 className="text">{name}</h1></div>
 
                 <div className="verticalSpacingInf" />
+
                 <div className="container">
                     <div className="containerRow">
                         <div className="statBox">
@@ -66,7 +67,9 @@ const DogStats = (obj) => {
                         </div>
 
                     </div>
-                </div></>
+                </div>
+
+            </>
         ) : (
             <div className="rubric"><img className="margin marginLeft" src={corgi} /><h1 className="text">No dogs could be found...</h1></div>
         )}

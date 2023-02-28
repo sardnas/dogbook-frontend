@@ -90,18 +90,20 @@ class DogTable extends Component {
     render() {
         return (
             <>
-                <div className='dogOuterContainer'>
-                    <div className='dogTableColumn'>
-                        <input value={this.state.searchFilter} onChange={this.handleOnChange} onKeyDown={this.onSearch} className='dogTableSearchBar' id="search" type="text" placeholder='Search for dog' />
-                        <div className='verticalSpacing' />
-                        {!this.search ? (
-                            <>{this.props.data[0].map(element => { return <div><div onClick={() => this.updateContent(element)} className='dogRow'>{element.breed_name}</div><div className='verticalSpacing' /></div> })}</>
-                        ) : (
-                            <>{this.state.searchResult.map(element => { return <div><div onClick={() => this.updateContent(element)} className='dogRow'>{element.breed_name}</div><div className='verticalSpacing' /></div> })}</>
-                        )}
-                    </div>
-                    <div className='dogContainer'>
-                        <DogStats dog={this.state.currentDog}></DogStats>
+                <div className='horizontallyCenter'>
+                    <div className='dogOuterContainer'>
+                        <div className='dogTableColumn'>
+                            <input value={this.state.searchFilter} onChange={this.handleOnChange} onKeyDown={this.onSearch} className='dogTableSearchBar' id="search" type="text" placeholder='Search for dog' />
+                            <div className='verticalSpacing' />
+                            {!this.search ? (
+                                <>{this.props.data[0].map(element => { return <div><div onClick={() => this.updateContent(element)} className='dogRow'>{element.breed_name}</div><div className='verticalSpacing' /></div> })}</>
+                            ) : (
+                                <>{this.state.searchResult.map(element => { return <div><div onClick={() => this.updateContent(element)} className='dogRow'>{element.breed_name}</div><div className='verticalSpacing' /></div> })}</>
+                            )}
+                        </div>
+                        <div className='dogContainer'>
+                            <DogStats dog={this.state.currentDog}></DogStats>
+                        </div>
                     </div>
                 </div>
             </>

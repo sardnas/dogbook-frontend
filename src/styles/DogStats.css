@@ -8,13 +8,13 @@
 }
 
 .statBox {
-    width: 35rem;
+    width: 21rem;
     height: 20rem;
 }
 
 .infoBoxText {
-    width: 25rem;
-    height: 17rem;
+    width: 50%;
+    height: min-content;
 }
 
 .text {
@@ -24,7 +24,6 @@
 .container {
     display: flex;
     flex-direction: column;
-    align-items: left;
 }
 
 .containerRow {
@@ -40,7 +39,6 @@
     margin-top: 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
-    margin-bottom: 2rem;
     background-color: white;
     border-radius: 1rem;
 }
@@ -51,7 +49,7 @@
 }
 
 .marginLeft {
-    margin-left: 6.5rem;
+    margin-left: 4rem;
 }
 
 .marginLeftSmall {
