@@ -1,0 +1,16 @@
+.containMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+}
+
+.statButton {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: #282c34;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}

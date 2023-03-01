@@ -2,9 +2,8 @@
 import '../styles/DogStats.css';
 import corgi from '../styles/icons8-corgi.gif';
 import React from 'react';
-import DonutChart from './DonutChart';
-import WeightChart from './WeightChart';
 import HeartButton from './HeartButton';
+import ResponsiveDogStats from './ResponsiveDogStats';
 
 const DogStats = (obj) => {
     const name = obj.dog[0];
@@ -45,30 +44,7 @@ const DogStats = (obj) => {
 
                 <div className="verticalSpacingInf" />
 
-                <div className="container">
-                    <div className="containerRow">
-                        <div className="statBox">
-                            <DonutChart data={data} />
-                        </div>
-                        <div className='marginTops'>
-                            <WeightChart maxWeight={max_weight} maxSize={max_height} breed={name}></WeightChart>
-                        </div>
-                    </div>
-                    <div className="verticalSpacingInf" />
-                    <div className="containerRow">
-                        <div className="infoBoxText marginLeft">
-                            <h2 className="text">{classification}</h2>
-                            <p className="text">Requiers between {min_reps} and {max_reps} reps to learn a new command.</p>
-                        </div>
-                        <div className="infoBoxText marginLeftSmall">
-                            <h2 className="text">Size and weight:</h2>
-                            <p className="text">Weight: {min_weight} kg - {max_weight} kg</p>
-                            <p className="text">Size: {min_height} cm - {max_height} cm</p>
-                        </div>
-
-                    </div>
-                </div>
-
+                <ResponsiveDogStats data={[name, min_height, max_height, min_weight, max_weight, classification, obey, min_reps, max_reps]} />
             </>
         ) : (
             <div className="rubric"><img className="margin marginLeft" src={corgi} /><h1 className="text">No dogs could be found...</h1></div>
