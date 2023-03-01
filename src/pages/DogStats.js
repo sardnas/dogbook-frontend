@@ -8,10 +8,10 @@ import HeartButton from './HeartButton';
 
 const DogStats = (obj) => {
     const name = obj.dog[0];
-    const min_height = Math.round(obj.dog[1] * 2.54 * 100) / 100;
-    const max_height = Math.round(obj.dog[2] * 2.54 * 100) / 100;
-    const min_weight = Math.round((obj.dog[3] / 5.0) * 0.45359237 * 100) / 100;
-    const max_weight = Math.round((obj.dog[4] / 5.0) * 0.45359237 * 100) / 100;
+    const min_height = Math.round(obj.dog[1] * 2.54 * 10) / 10;
+    const max_height = Math.round(obj.dog[2] * 2.54 * 10) / 10;
+    const min_weight = Math.round(obj.dog[3] * 0.45359237 * 10) / 10;
+    const max_weight = Math.round(obj.dog[4] * 0.45359237 * 10) / 10;
     const classification = obj.dog[5];
     const obey = parseFloat(obj.dog[6]);
     const obey_inv = 100 - obey;

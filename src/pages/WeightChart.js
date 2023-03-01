@@ -6,9 +6,9 @@ export default function WeightChart(properties) {
     const weight = properties.maxWeight;
     const breed = properties.breed;
     const data = [
-        { x: 23, y: 0.5, z: 'Chihuahua' },
-        { x: 53, y: 3.6, z: 'Border Collie' },
-        { x: 81, y: 14.5, z: 'Great Dane' },
+        { x: 23, y: 2, z: 'Chihuahua' },
+        { x: 53, y: 18, z: 'Border Collie' },
+        { x: 81, y: 72, z: 'Great Dane' },
         { x: size, y: weight, z: breed },
     ];
     const COLORS = ['#333', '#333', '#333', '#ffffff'];
