@@ -14,7 +14,7 @@
 
 .infoBoxText {
     width: 50%;
-    height: min-content;
+    height: 11rem;
 }
 
 .text {
@@ -49,11 +49,11 @@
 }
 
 .marginLeft {
-    margin-left: 4rem;
+    margin-left: 1rem;
 }
 
 .marginLeftSmall {
-    margin-left: 3rem;
+    margin-left: 1rem;
 }
 
 .marginTops {

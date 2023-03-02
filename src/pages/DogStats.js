@@ -23,38 +23,19 @@ const DogStats = (obj) => {
         { name: 'Disobey', value: obey_inv },
     ];
 
-    const COLORS = ['#99AA38', '#FF6666'];
-
-    const RADIAN = Math.PI / 180;
-    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
-        const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-        const x = cx + radius * Math.cos(-midAngle * RADIAN);
-        const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-        return (
-            <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-                {`${(percent * 100).toFixed(0)}%`}
-            </text>
-        );
-    };
-
     return (
         <>{name ? ( //if dog exist we want to display
             <>
                 <div className="rubric"><HeartButton data={obj} /><img className="margin" src={corgi} /><h1 className="text">{name}</h1></div>
-
-                <div className="verticalSpacingInf" />
-
                 <div className="container">
                     <div className="containerRow">
                         <div className="statBox">
                             <DonutChart data={data} />
                         </div>
-                        <div className='marginTops'>
+                        <div className='marginTops marginLeft'>
                             <WeightChart maxWeight={max_weight} maxSize={max_height} breed={name}></WeightChart>
                         </div>
                     </div>
-                    <div className="verticalSpacingInf" />
                     <div className="containerRow">
                         <div className="infoBoxText marginLeft">
                             <h2 className="text">{classification}</h2>
@@ -71,7 +52,10 @@ const DogStats = (obj) => {
 
             </>
         ) : (
-            <div className="rubric"><img className="margin marginLeft" src={corgi} /><h1 className="text">No dogs could be found...</h1></div>
+            <>
+                <div className="rubric"><img className="margin marginLeft" src={corgi} /><h1 className="text">No dogs could be found...</h1></div>
+                <div className="verticalSpacingInf" />
+            </>
         )}
         </>
     );
