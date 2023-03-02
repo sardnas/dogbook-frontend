@@ -1,11 +1,42 @@
 
 import '../styles/DogStats.css';
 import corgi from '../styles/icons8-corgi.gif';
-import React from 'react';
 import HeartButton from './HeartButton';
-import ResponsiveDogStats from './ResponsiveDogStats';
+import '../styles/ResponsiveStats.css';
+import React, { Component } from 'react';
+import DonutChart from './DonutChart';
+import WeightChart from './WeightChart';
 
-const DogStats = (obj) => {
+class DogStats extends Component {
+    constructor(props) {
+        console.log(props.data);
+        super(props);
+        this.state = ({
+            startWin: true,
+            sizeWin: true,
+            obeyWin: true
+        })
+        this.name = props.data[0];
+        this.minHeight = props.data[1];
+        this.maxHeight = props.data[2];
+        this.minWeight = props.data[3];
+        this.maxWeight = props.data[4];
+        this.classification = props.data[5];
+        this.obey = props.data[6];
+        this.minReps = props.data[7];
+        this.maxReps = props.data[8];
+
+    }
+    handleClickStart = () => {
+        this.setState({ startWin: true, sizeWin: false, obeyWin: false });
+    }
+    handleClickSize = () => {
+        this.setState({ startWin: false, sizeWin: true, obeyWin: false });
+    }
+    handleClickObey = () => {
+        this.setState({ startWin: false, sizeWin: false, obeyWin: true });
+    }
+    /*
     const name = obj.dog[0];
     const min_height = Math.round(obj.dog[1] * 2.54 * 10) / 10;
     const max_height = Math.round(obj.dog[2] * 2.54 * 10) / 10;
@@ -16,41 +47,23 @@ const DogStats = (obj) => {
     const obey_inv = 100 - obey;
     const min_reps = obj.dog[7];
     const max_reps = obj.dog[8];
-
-    const data = [
-        { name: 'Obey', value: obey },
-        { name: 'Disobey', value: obey_inv },
-    ];
-
-    const COLORS = ['#99AA38', '#FF6666'];
-
-    const RADIAN = Math.PI / 180;
-    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
-        const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-        const x = cx + radius * Math.cos(-midAngle * RADIAN);
-        const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
+*/
+    render() {
         return (
-            <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-                {`${(percent * 100).toFixed(0)}%`}
-            </text>
-        );
-    };
+            <>{this.name ? ( //if dog exist we want to display
+                <>
+                    <div className="rubric"><HeartButton data={this.props} /><img className="margin" src={corgi} /><h1 className="text">{this.name}</h1></div>
 
-    return (
-        <>{name ? ( //if dog exist we want to display
-            <>
-                <div className="rubric"><HeartButton data={obj} /><img className="margin" src={corgi} /><h1 className="text">{name}</h1></div>
+                    <div className="verticalSpacingInf" />
 
-                <div className="verticalSpacingInf" />
 
-                <ResponsiveDogStats data={[name, min_height, max_height, min_weight, max_weight, classification, obey, min_reps, max_reps]} />
+                </>
+            ) : (
+                <div className="rubric"><img className="margin marginLeft" src={corgi} /><h1 className="text">No dogs could be found...</h1></div>
+            )}
             </>
-        ) : (
-            <div className="rubric"><img className="margin marginLeft" src={corgi} /><h1 className="text">No dogs could be found...</h1></div>
-        )}
-        </>
-    );
+        );
+    }
 };
 
 export default DogStats;

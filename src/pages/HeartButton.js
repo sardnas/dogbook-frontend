@@ -41,7 +41,7 @@ function HeartButton(props) {
     setActive(false);
     if (favBreeds) {
       favBreeds.forEach((element) => {
-        if (props.data.dog[9] == element.breed_id) {
+        if (props.data[9] == element.breed_id) {
           setActive(true);
         }
       });
@@ -52,9 +52,9 @@ function HeartButton(props) {
   const handleOnClick = () => {
     setActive(!active);
     if (!active) {
-      PutFavorite(props.data.dog[9], token);
+      PutFavorite(props.data[9], token);
     } else {
-      RemoveFavorite(props.data.dog[9], token);
+      RemoveFavorite(props.data[9], token);
     }
 
   }

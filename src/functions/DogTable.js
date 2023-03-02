@@ -107,7 +107,7 @@ class DogTable extends Component {
                             )}
                         </div>
                         <div className='dogContainer'>
-                            <DogStats dog={this.state.currentDog}></DogStats>
+                            <DogStats data={this.state.currentDog}></DogStats>
                         </div>
                     </div>
                 </div>
