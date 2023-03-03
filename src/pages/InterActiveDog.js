@@ -25,7 +25,7 @@ function Box(props) {
     )
 }
 
-export default function InterActiveCubes() {
+export default function InterActiveDog() {
     return (
         <Canvas>
             <ambientLight intensity={0.5} />
