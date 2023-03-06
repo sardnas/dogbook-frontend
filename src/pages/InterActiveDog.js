@@ -1,37 +1,79 @@
 import { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import { OrbitControls, useGLTF, Html } from '@react-three/drei'
+import React, { Suspense } from 'react';
+import shiba from "./shiba.glb";
+import '../styles/InteractiveDog.css';
+import heart from "./heart.png";
 
-function Dog(props) {
-    // This reference gives us direct access to the THREE.Mesh object
-    const ref = useRef()
-    // Hold state for hovered and clicked events
-    const [hovered, hover] = useState(false)
-    const [clicked, click] = useState(false)
-    // Subscribe this component to the render-loop, rotate the mesh every frame
-    useFrame((state, delta) => (ref.current.rotation.x += delta))
-    // Return the view, these are regular Threejs elements expressed in JSX
+function Dog() {
+    const { scene } = useGLTF(shiba);
+    const [hovered, setHover] = useState(false);
+    const [active, setActive] = useState(false);
+    const mesh = useRef();
+    useFrame(({ clock }) => {
+        const t = clock.getElapsedTime();
+        const x = Math.sin(t);
+        const z = Math.cos(t);
+        const y = Math.sin(t);
+        mesh.current.position.x = x / 10;
+        mesh.current.position.z = z / 10;
+        mesh.current.position.y = y / 10;
+        mesh.current.rotation.x = -0.6;
+        mesh.current.rotation.y = 0.4;
+    });
+
+    const handleClick = () => {
+        setActive(true);
+    }
+
+    const handlePointerOut = () => {
+        setHover(false);
+        setActive(false);
+    }
     return (
-        <mesh
-            {...props}
-            ref={ref}
-            scale={clicked ? 2.5 : 2}
-            onClick={(event) => click(!clicked)}
-            onPointerOver={(event) => hover(true)}
-            onPointerOut={(event) => hover(false)}>
-            <octahedronGeometry args={[1, 2, -2, 1, 2, 1, 1, 1]} />
-            <meshStandardMaterial color={hovered ? 'hotpink' : '#7180B9'} />
-        </mesh>
-    )
+        <>
+            {hovered ? (
+                <>
+                    <mesh
+                        position={[mesh.current.position.x + 0.5, 0, mesh.current.position.z - 0.3]}>
+                        <Html>
+                            <div className='talkingBubble'>Pet me!</div>
+                        </Html>
+                    </mesh>
+                </>
+            ) : (
+                <></>
+            )}
+            {active ? (
+                <>
+                    <mesh
+                        position={[mesh.current.position.x - 0.7, 0, mesh.current.position.z - 0.3]}>
+                        <Html>
+                            <div>thanks</div>
+                        </Html>
+                    </mesh>
+                </>
+            ) : (
+                <></>
+            )}
+            <mesh position={[0, 0, 0]}
+                ref={mesh}
+                onClick={handleClick}
+                onPointerOver={(event) => setHover(true)}
+                onPointerOut={handlePointerOut}>
+                <primitive object={scene} />
+            </mesh>
+        </>
+    );
 }
 
 export default function InterActiveDog() {
     return (
-        <Canvas>
-            <ambientLight intensity={0.5} />
-            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-            <pointLight position={[-10, -10, -10]} />
-            <Dog position={[-1, 0, 0]} />
+        <Canvas camera={{ position: [0, 55, 65], fov: 3 }}>
+            <Suspense fallback={null}>
+                <Dog />
+            </Suspense>
             <OrbitControls />
         </Canvas>
     )
