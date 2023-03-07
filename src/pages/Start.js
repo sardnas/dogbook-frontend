@@ -18,6 +18,7 @@ const Start = () => {
           <InterActiveDog></InterActiveDog>
         </div>
       </div>
+      <div className="infoText">Interactive dog: Hold right click to move, hold left click to rotate, zoom to make bigger/smaller</div>
     </>
   );
 };

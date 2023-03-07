@@ -17,6 +17,7 @@ const Hello = () => {
             <p>Backend repository: https://github.com/sardnas/springboot-dog-app</p>
             <p>Frontend repository: https://github.com/sardnas/springboot-dog-app-frontend</p>
             <p>Everything was done by Sandra Reinecke, IT-consultant trainee at Consid. </p>
+            <div className="infoText">Interactive dog: Hold right click to move, hold left click to rotate, zoom to make bigger/smaller</div>
         </>
     );
 };
