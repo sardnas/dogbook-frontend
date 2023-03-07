@@ -18,11 +18,21 @@ const DogDetails = () => {
     const max_height = Math.round(thisDog[2] * 2.54 * 10) / 10;
     const min_weight = Math.round(thisDog[3] * 0.45359237 * 10) / 10;
     const max_weight = Math.round(thisDog[4] * 0.45359237 * 10) / 10;
-    const classification = thisDog[5];
+    const classification = thisDog[5].toLowerCase();
     const obey = parseFloat(thisDog[6]);
     const obey_inv = 100 - obey;
     const min_reps = thisDog[7];
     const max_reps = thisDog[8];
+    const origin = obj.dog[9];
+    const img = obj.dog[10];
+    let size;
+    if (max_weight < 15) {
+        size = "small";
+    } else if (max_weight >= 15 && max_weight < 50) {
+        size = "medium";
+    } else {
+        size = "big";
+    }
     const data = [
         { name: 'Obey', value: obey },
         { name: 'Disobey', value: obey_inv },
@@ -36,13 +46,17 @@ const DogDetails = () => {
                 <Signout />
             </div>
             <div className="box">
+                <div className='imgBox'>
+                    <img src={img} label={{ img }} />
+                </div>
                 <div className="rubric"><HeartButton data={obj} /><h1 className="text">{name}</h1></div>
                 <div className="center">
                     <div className="stats">
                         <div className="square">
                             <div className="gapUp" />
-                            <h3 className="text">{classification}</h3>
-                            <p className="text">Requiers between {min_reps} and {max_reps} reps to learn a new command.</p>
+                            <h2 className="text">Intelligence & origin</h2>
+                            <p className="text">The {name} breed is classified as {classification} and requier between {min_reps} and {max_reps} reps to learn a new command.</p>
+                            <p className="text">The {name} originates from {origin}.</p>
                         </div>
                         <div className="gap" />
                         <div className="square">
@@ -55,9 +69,8 @@ const DogDetails = () => {
                         </div>
                         <div className="gap" />
                         <div className="square">
-                            <h2 className="text">Size and weight:</h2>
-                            <p className="text">Weight: {min_weight} kg - {max_weight} kg</p>
-                            <p className="text">Size: {min_height} cm - {max_height} cm</p>
+                            <h2 className="text">Size and weight</h2>
+                            <p className="text">The {name} breed is a {size} sized dog and usually weighs between {min_weight} kg and {max_weight} kg. The size of the {name} is usually between {min_height} cm and {max_height} cm.</p>
                         </div>
                     </div>
                 </div>

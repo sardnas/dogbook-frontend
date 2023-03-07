@@ -44,5 +44,29 @@
 }
 
 .gapUp {
-    min-height: 30%;
+    min-height: 15%;
+}
+
+.imgBox {
+    width: 9rem;
+    height: min-content;
+    border-radius: 50%;
+    display: flex;
+    margin-left: 57.5%;
+    margin-top: 1%;
+    position: absolute;
+    border: 2px solid #282c34;
+    box-shadow: 10px 10px 5px #00000056;
+    -moz-box-shadow: 10px 10px 5px #00000056;
+    -webkit-box-shadow: 10px 10px 5px #00000056;
+    -khtml-box-shadow: 10px 10px 5px #00000056;
+}
+
+.imgBox img {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+
 }

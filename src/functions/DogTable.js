@@ -17,6 +17,8 @@ class DogTable extends Component {
                 this.props.data[0][0].breed_obey,
                 this.props.data[0][0].reps_lower,
                 this.props.data[0][0].reps_upper,
+                this.props.data[0][0].origin,
+                this.props.data[0][0].img,
                 this.props.data[0][0].breed_id],
                 searchFilter: "",
                 searchResult: [],
@@ -47,6 +49,8 @@ class DogTable extends Component {
             dogObject.breed_obey,
             dogObject.reps_lower,
             dogObject.reps_upper,
+            dogObject.origin,
+            dogObject.img,
             dogObject.breed_id],
         });
     }

@@ -87,8 +87,17 @@
 }
 
 .imageBox {
-    background-color: black;
-    border-radius: 50%;
-    width: 15rem;
-    height: 15rem;
+    background-color: white;
+    width: 13rem;
+    height: min-content;
+    border-radius: 15%;
+    display: flex;
+}
+
+.imageBox img {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15%;
 }

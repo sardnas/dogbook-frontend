@@ -46,7 +46,7 @@ const renderActiveShape = (props) => {
       <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
       <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`Prob.`}</text>
       <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#ffffff">
-        {`${(percent * 100).toFixed(2)}%`}
+        {`${(percent * 100).toFixed(0)}%`}
       </text>
     </g>
   );
@@ -79,8 +79,8 @@ export default class DonutChart extends PureComponent {
             data={this.props.data}
             cx="50%"
             cy="50%"
-            innerRadius={35}
-            outerRadius={45}
+            innerRadius={50}
+            outerRadius={70}
             fill="#333"
             dataKey="value"
             onMouseEnter={this.onPieEnter}

@@ -21,13 +21,16 @@ const DogStats = (obj) => {
     const obey_inv = 100 - obey;
     const min_reps = obj.dog[7];
     const max_reps = obj.dog[8];
-    const urlName = name.toLowerCase().replaceAll(" ", "-");
+    const origin = obj.dog[9];
+    const img = obj.dog[10];
     const data = [
         { name: 'Obey', value: obey },
         { name: 'Disobey', value: obey_inv },
     ];
 
+    console.log(obj);
     const handleButtonClick = () => {
+        const urlName = name.toLowerCase().replaceAll(" ", "-");
         cookies.set(`${urlName}`, obj, {
             path: '/',
             sameSite: 'none',
@@ -37,7 +40,7 @@ const DogStats = (obj) => {
     }
 
     return (
-        <>{name ? ( //if dog exist we want to display
+        <>{obj.dog[0] ? ( //if dog exist we want to display
             <>
                 <div className="rubric"><HeartButton data={obj} /><img className="margin" src={corgi} /><h1 className="text">{name}</h1></div>
                 <div className="container">
@@ -45,10 +48,15 @@ const DogStats = (obj) => {
                         <div className="horizontalSpacing"></div>
                         <div className="statBox">
                             <div className='verticalSpacingInf'></div>
-                            <div className='imageBox'></div>
+                            <h3 className='text'>Origin: {origin}</h3>
+                            <div className='imageBox'>
+
+                                <img src={img} label={{ img }} />
+                            </div>
                         </div>
                         <div className="horizontalSpacing"></div>
                         <div className="statBox">
+
                             <DonutChart data={data} />
                         </div>
                     </div>
