@@ -1,0 +1,78 @@
+import React from "react";
+import Signout from "./Signout";
+import { useNavigate, useParams } from 'react-router-dom';
+import Cookies from 'universal-cookie';
+import DonutChart from './DonutChart';
+import WeightChart from './WeightChart';
+import HeartButton from './HeartButton';
+import '../styles/DogDetails.css';
+
+const DogDetails = () => {
+    const cookies = new Cookies();
+    const params = useParams();
+    const dogName = params.Name;
+    const obj = cookies.get(dogName);
+    const thisDog = obj.dog;
+    const name = thisDog[0];
+    const min_height = Math.round(thisDog[1] * 2.54 * 10) / 10;
+    const max_height = Math.round(thisDog[2] * 2.54 * 10) / 10;
+    const min_weight = Math.round(thisDog[3] * 0.45359237 * 10) / 10;
+    const max_weight = Math.round(thisDog[4] * 0.45359237 * 10) / 10;
+    const classification = thisDog[5];
+    const obey = parseFloat(thisDog[6]);
+    const obey_inv = 100 - obey;
+    const min_reps = thisDog[7];
+    const max_reps = thisDog[8];
+    const data = [
+        { name: 'Obey', value: obey },
+        { name: 'Disobey', value: obey_inv },
+    ];
+
+    console.log(thisDog);
+    return (
+        <>
+            <div className="backSignOut">
+                <BackToDogopedia />
+                <Signout />
+            </div>
+            <div className="box">
+                <div className="rubric"><HeartButton data={obj} /><h1 className="text">{name}</h1></div>
+                <div className="center">
+                    <div className="stats">
+                        <div className="square">
+                            <div className="gapUp" />
+                            <h3 className="text">{classification}</h3>
+                            <p className="text">Requiers between {min_reps} and {max_reps} reps to learn a new command.</p>
+                        </div>
+                        <div className="gap" />
+                        <div className="square">
+                            <DonutChart data={data} />
+                        </div>
+                    </div>
+                    <div className="stats">
+                        <div className="square">
+                            <WeightChart maxWeight={max_weight} maxSize={max_height} breed={name}></WeightChart>
+                        </div>
+                        <div className="gap" />
+                        <div className="square">
+                            <h2 className="text">Size and weight:</h2>
+                            <p className="text">Weight: {min_weight} kg - {max_weight} kg</p>
+                            <p className="text">Size: {min_height} cm - {max_height} cm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+
+const BackToDogopedia = () => {
+    const navigate = useNavigate();
+    return (
+        <>
+            <div className="clickable" onClick={() => navigate('/user/dogopedia')}>&#11013;</div>
+        </>
+    );
+};
+
+export default DogDetails;

@@ -10,6 +10,9 @@
 .statBox {
     width: 21rem;
     height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .infoBoxText {
@@ -58,4 +61,34 @@
 
 .marginTops {
     margin-top: 3rem;
+}
+
+.goToPageButton {
+    border: none;
+    border-radius: 1rem;
+    min-height: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    max-width: max-content;
+    cursor: pointer;
+    background-color: white;
+    color: #282c34;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.horizontalSpacing {
+    min-width: 3rem;
+}
+
+.imageBox {
+    background-color: black;
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
 }

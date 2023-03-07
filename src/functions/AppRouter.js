@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import React from "react";
 import FirstLayout from "../pages/FirstLayout";
 import Hello from "../pages/Hello";
+import DogDetails from "../pages/DogDetails";
 
 
 function AppRouter() {
@@ -26,6 +27,8 @@ function AppRouter() {
           <Route path="dogopedia" element={<Dogopedia />} />
           <Route path="mydogs" element={<MyDogs />} />
           <Route path="*" element={<NoPage />} />
+          <Route path='dogopedia/dog/:Name' exact element={<DogDetails />}></Route>
+          <Route path='mydogs/dog/:Name' exact element={<DogDetails />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

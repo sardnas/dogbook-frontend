@@ -5,8 +5,12 @@ import React from 'react';
 import DonutChart from './DonutChart';
 import WeightChart from './WeightChart';
 import HeartButton from './HeartButton';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'universal-cookie';
 
 const DogStats = (obj) => {
+    const navigate = useNavigate();
+    const cookies = new Cookies();
     const name = obj.dog[0];
     const min_height = Math.round(obj.dog[1] * 2.54 * 10) / 10;
     const max_height = Math.round(obj.dog[2] * 2.54 * 10) / 10;
@@ -17,11 +21,20 @@ const DogStats = (obj) => {
     const obey_inv = 100 - obey;
     const min_reps = obj.dog[7];
     const max_reps = obj.dog[8];
-
+    const urlName = name.toLowerCase().replaceAll(" ", "-");
     const data = [
         { name: 'Obey', value: obey },
         { name: 'Disobey', value: obey_inv },
     ];
+
+    const handleButtonClick = () => {
+        cookies.set(`${urlName}`, obj, {
+            path: '/',
+            sameSite: 'none',
+            secure: true,
+        });
+        navigate(`dog/${urlName}`);
+    }
 
     return (
         <>{name ? ( //if dog exist we want to display
@@ -29,26 +42,18 @@ const DogStats = (obj) => {
                 <div className="rubric"><HeartButton data={obj} /><img className="margin" src={corgi} /><h1 className="text">{name}</h1></div>
                 <div className="container">
                     <div className="containerRow">
+                        <div className="horizontalSpacing"></div>
+                        <div className="statBox">
+                            <div className='verticalSpacingInf'></div>
+                            <div className='imageBox'></div>
+                        </div>
+                        <div className="horizontalSpacing"></div>
                         <div className="statBox">
                             <DonutChart data={data} />
                         </div>
-                        <div className='marginTops marginLeft'>
-                            <WeightChart maxWeight={max_weight} maxSize={max_height} breed={name}></WeightChart>
-                        </div>
-                    </div>
-                    <div className="containerRow">
-                        <div className="infoBoxText marginLeft">
-                            <h2 className="text">{classification}</h2>
-                            <p className="text">Requiers between {min_reps} and {max_reps} reps to learn a new command.</p>
-                        </div>
-                        <div className="infoBoxText marginLeftSmall">
-                            <h2 className="text">Size and weight:</h2>
-                            <p className="text">Weight: {min_weight} kg - {max_weight} kg</p>
-                            <p className="text">Size: {min_height} cm - {max_height} cm</p>
-                        </div>
-
                     </div>
                 </div>
+                <div className='goToPageButton' onClick={handleButtonClick}>&#128062; Go to {name} page &#128062;</div>
 
             </>
         ) : (
