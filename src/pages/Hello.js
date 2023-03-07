@@ -1,8 +1,15 @@
 import React from "react";
+import InterActiveDog from "./InterActiveDog";
+import '../styles/start.css';
 const Hello = () => {
     return (
         <>
             <h1>Welcome to the best website about dogs!</h1>
+            <div className="dogBox">
+                <div className="interactiveDogBox">
+                    <InterActiveDog></InterActiveDog>
+                </div>
+            </div>
             <h3>Create an account to browse the dog database.</h3>
             <p>This client was built with JavaScript & React and the
                 API was built with Java Spring Boot. PostgreSQL was used

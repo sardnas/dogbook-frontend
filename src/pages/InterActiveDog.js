@@ -4,7 +4,6 @@ import { OrbitControls, useGLTF, Html } from '@react-three/drei'
 import React, { Suspense } from 'react';
 import shiba from "./shiba.glb";
 import '../styles/InteractiveDog.css';
-import heart from "./heart.png";
 
 function Dog() {
     const { scene } = useGLTF(shiba);
@@ -19,12 +18,14 @@ function Dog() {
         mesh.current.position.x = x / 10;
         mesh.current.position.z = z / 10;
         mesh.current.position.y = y / 10;
-        mesh.current.rotation.x = -0.6;
-        mesh.current.rotation.y = 0.4;
+        mesh.current.rotation.x = 0.3;
+        mesh.current.rotation.z = 0.1;
+        mesh.current.rotation.y = 0.5;
     });
 
     const handleClick = () => {
         setActive(true);
+        setHover(false);
     }
 
     const handlePointerOut = () => {
@@ -48,9 +49,9 @@ function Dog() {
             {active ? (
                 <>
                     <mesh
-                        position={[mesh.current.position.x - 0.7, 0, mesh.current.position.z - 0.3]}>
+                        position={[mesh.current.position.x - 0.8, 0.3, mesh.current.position.z]}>
                         <Html>
-                            <div>thanks</div>
+                            <div className='heart'>&#128149;</div>
                         </Html>
                     </mesh>
                 </>
@@ -70,7 +71,7 @@ function Dog() {
 
 export default function InterActiveDog() {
     return (
-        <Canvas camera={{ position: [0, 55, 65], fov: 3 }}>
+        <Canvas>
             <Suspense fallback={null}>
                 <Dog />
             </Suspense>
