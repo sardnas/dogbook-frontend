@@ -55,7 +55,6 @@ const MyDogs = () => {
   return (
     <>
       <Signout />
-      <div className="disclaimer">I'm sorry, but your favorite dogs might be gone! Use the search function in Dogopedia to add them to your favorites again.</div>
       <h1>My dogs</h1>
       {breeds ? ( //if breeds exist we want to display them
         <>
