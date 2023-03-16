@@ -5,7 +5,7 @@ import MyDogs from "../pages/MyDogs";
 import NoPage from "../pages/NoPage";
 import Start from "../pages/Start";
 import Login from "../pages/Login";
-import Index from "../pages/index";
+import Index from "../pages/index.html";
 import Register from "../pages/Register";
 import React from "react";
 import FirstLayout from "../pages/FirstLayout";
