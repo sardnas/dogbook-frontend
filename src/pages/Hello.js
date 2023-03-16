@@ -4,7 +4,6 @@ import '../styles/start.css';
 const Hello = () => {
     return (
         <>
-            <div className="disclaimer">Dogbook servers are currently under construction!</div>
             <h1>Welcome to the best website about dogs!</h1>
             <div className="dogBox">
                 <div className="interactiveDogBox">

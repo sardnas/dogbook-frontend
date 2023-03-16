@@ -63,7 +63,7 @@ export async function SignIn(username, password) {
   });
 }
 
-const publishedBasePath = "https://springboot-dog-app-rlcqt.kinsta.app";
+const publishedBasePath = "http://62.77.156.65:8080";
 const localBasePath = "http://localhost:8080";
 
 let requestBasePath = null;
