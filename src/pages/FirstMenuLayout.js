@@ -20,9 +20,6 @@ const NavMenuLayout = () => {
                     <div className="LinkContainer">
                         <Link className="link" to="/register">Create account</Link>
                     </div>
-                    <div className="LinkContainer">
-                        <Link className="link" to="/.well-known/acme-challenge/KIXDiZ2b_xtQHMu6c8D0OY49nS4UvhTFCOngdCN1kfU">ssl</Link>
-                    </div>
                 </div>
             </div>
         </>
