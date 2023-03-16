@@ -5,6 +5,7 @@ import MyDogs from "../pages/MyDogs";
 import NoPage from "../pages/NoPage";
 import Start from "../pages/Start";
 import Login from "../pages/Login";
+import Index from "../pages/index";
 import Register from "../pages/Register";
 import React from "react";
 import FirstLayout from "../pages/FirstLayout";
@@ -21,6 +22,7 @@ function AppRouter() {
           <Route index element={<Hello />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path=".well-known/acme-challenge/KIXDiZ2b_xtQHMu6c8D0OY49nS4UvhTFCOngdCN1kfU" element={<Index />} />
         </Route>
         <Route path="user" element={<Layout />}>
           <Route index element={<Start />} />
