@@ -63,8 +63,8 @@ export async function SignIn(username, password) {
   });
 }
 
-const publishedBasePath = "https://62.77.156.65:8080/";
-const localBasePath = "http://localhost:8080";
+const publishedBasePath = "https://62.77.156.65:8443";
+const localBasePath = "https://62.77.156.65:8443";
 
 let requestBasePath = null;
 
