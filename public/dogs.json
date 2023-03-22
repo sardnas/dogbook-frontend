@@ -1,4 +1,48 @@
 {
+    "popularBreeds": [
+        {
+            "breed_name": "Australian Shepherd",
+            "height_low_inches": 18,
+            "height_high_inches": 23,
+            "weight_low_lbs": 40,
+            "weight_high_lbs": 60,
+            "breed_classification": "Average Working/Obedience Intelligence",
+            "breed_obey": "50%",
+            "reps_lower": 26,
+            "reps_upper": 40,
+            "origin": "United States",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Australian_Shepherd_red_bi.JPG/220px-Australian_Shepherd_red_bi.JPG",
+            "breed_id": 149
+        },
+        {
+            "breed_name": "Border Collie",
+            "height_low_inches": 19,
+            "height_high_inches": 21,
+            "weight_low_lbs": 40,
+            "weight_high_lbs": 40,
+            "breed_classification": "Brightest Dogs",
+            "breed_obey": "95%",
+            "reps_lower": 1,
+            "reps_upper": 4,
+            "origin": "Anglo-Scottish border",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/BORDER_COLLIE%2C_Simaro_Million_Dollar_Baby_%2824290879465%29_2.jpg/220px-BORDER_COLLIE%2C_Simaro_Million_Dollar_Baby_%2824290879465%29_2.jpg",
+            "breed_id": 162
+        },
+        {
+            "breed_name": "Chihuahua",
+            "height_low_inches": 6,
+            "height_high_inches": 9,
+            "weight_low_lbs": 2,
+            "weight_high_lbs": 5,
+            "breed_classification": "Fair Working/Obedience Intelligence",
+            "breed_obey": "30%",
+            "reps_lower": 41,
+            "reps_upper": 80,
+            "origin": "Mexico",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Chihuahua1_bvdb.jpg/220px-Chihuahua1_bvdb.jpg",
+            "breed_id": 177
+        }
+    ],
     "breeds": [
         {
             "breed_name": "Affenpinscher",
@@ -111,20 +155,6 @@
             "origin": "Australia",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/ACD-blue-spud.jpg/220px-ACD-blue-spud.jpg",
             "breed_id": 148
-        },
-        {
-            "breed_name": "Australian Shepherd",
-            "height_low_inches": 18,
-            "height_high_inches": 23,
-            "weight_low_lbs": 40,
-            "weight_high_lbs": 60,
-            "breed_classification": "Average Working/Obedience Intelligence",
-            "breed_obey": "50%",
-            "reps_lower": 26,
-            "reps_upper": 40,
-            "origin": "United States",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Australian_Shepherd_red_bi.JPG/220px-Australian_Shepherd_red_bi.JPG",
-            "breed_id": 149
         },
         {
             "breed_name": "Australian Terrier",
@@ -293,20 +323,6 @@
             "origin": "Belgium, France &United Kingdom",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Bloodhound_Erland22.jpg/220px-Bloodhound_Erland22.jpg",
             "breed_id": 161
-        },
-        {
-            "breed_name": "Border Collie",
-            "height_low_inches": 19,
-            "height_high_inches": 21,
-            "weight_low_lbs": 40,
-            "weight_high_lbs": 40,
-            "breed_classification": "Brightest Dogs",
-            "breed_obey": "95%",
-            "reps_lower": 1,
-            "reps_upper": 4,
-            "origin": "Anglo-Scottish border",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/BORDER_COLLIE%2C_Simaro_Million_Dollar_Baby_%2824290879465%29_2.jpg/220px-BORDER_COLLIE%2C_Simaro_Million_Dollar_Baby_%2824290879465%29_2.jpg",
-            "breed_id": 162
         },
         {
             "breed_name": "Border Terrier",
@@ -503,20 +519,6 @@
             "origin": "United States of America",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/CH_Chesapeake.jpg/220px-CH_Chesapeake.jpg",
             "breed_id": 176
-        },
-        {
-            "breed_name": "Chihuahua",
-            "height_low_inches": 6,
-            "height_high_inches": 9,
-            "weight_low_lbs": 2,
-            "weight_high_lbs": 5,
-            "breed_classification": "Fair Working/Obedience Intelligence",
-            "breed_obey": "30%",
-            "reps_lower": 41,
-            "reps_upper": 80,
-            "origin": "Mexico",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Chihuahua1_bvdb.jpg/220px-Chihuahua1_bvdb.jpg",
-            "breed_id": 177
         },
         {
             "breed_name": "Chinese Crested",
