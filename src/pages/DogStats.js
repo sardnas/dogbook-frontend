@@ -28,7 +28,6 @@ const DogStats = (obj) => {
         { name: 'Disobey', value: obey_inv },
     ];
 
-    console.log(obj);
     const handleButtonClick = () => {
         const urlName = name.toLowerCase().replaceAll(" ", "-");
         cookies.set(`${urlName}`, obj, {

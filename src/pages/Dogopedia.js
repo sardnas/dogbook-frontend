@@ -11,7 +11,6 @@ const Dogopedia = () => {
   const [errorFetchingBreeds, setErrorFetchingBreeds] = useState(false);
   const [breeds, setBreeds] = useState(null);
 
-
   useEffect(() => {
     async function FetchBreeds() {
       try {
@@ -19,11 +18,10 @@ const Dogopedia = () => {
 
         if (response.status === 200) {
           let json = await response.json();
-
           setBreeds(json);
         } else if (response.status === 400) {
           alert(
-            "400 means that the server thinks this request was invalid because of missing or invalid input"
+            "400 invalid input"
           );
           setErrorFetchingBreeds(true); //set error value
         } else {
@@ -65,6 +63,8 @@ const Dogopedia = () => {
 };
 
 const DogTablePage = ({ dogs }) => {
+  //console.log("dogs");
+  //console.log(JSON.stringify(dogs));
   const myDogs = false;
   return <div className="dogTablePage"><div className="horizontalSpacing"></div><DogTable data={[dogs, myDogs]} /></div>;
 }
