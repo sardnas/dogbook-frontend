@@ -55,6 +55,7 @@
             "reps_lower": 16,
             "reps_upper": 25,
             "origin": "Germany",
+            "svg": "https://dogbook.nu/image/affenpincher.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Affenpinscher.jpg/220px-Affenpinscher.jpg",
             "breed_id": 141
         },
@@ -69,6 +70,7 @@
             "reps_lower": 81,
             "reps_upper": 100,
             "origin": "Afghanistan",
+            "svg": "https://dogbook.nu/image/afghanhound.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Afghan_dog_-_cropped.jpg/220px-Afghan_dog_-_cropped.jpg",
             "breed_id": 142
         },
@@ -83,6 +85,7 @@
             "reps_lower": 16,
             "reps_upper": 25,
             "origin": "England",
+            "svg": "https://dogbook.nu/image/airdaleterrier.svg",
             "img": "https://www.omlet.se/images/cache/1024/682/90/Dog-Airedale_Terrier-An_Airedale_Terrier_standing_tall%2C_awaiting_a_command_from_it%27s_owner.webp",
             "breed_id": 143
         },
@@ -97,6 +100,7 @@
             "reps_lower": 26,
             "reps_upper": 40,
             "origin": "Japan",
+            "svg": "https://dogbook.nu/image/akita.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/American-akita.jpg/220px-American-akita.jpg",
             "breed_id": 144
         },
@@ -111,6 +115,7 @@
             "reps_lower": 26,
             "reps_upper": 40,
             "origin": "United States",
+            "svg": "https://dogbook.nu/image/americanfoxhound.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/AmericanFoxhound2.jpg/220px-AmericanFoxhound2.jpg",
             "breed_id": 145
         },
@@ -125,6 +130,7 @@
             "reps_lower": 16,
             "reps_upper": 25,
             "origin": "United States",
+            "svg": "https://dogbook.nu/image/americanstaffordshireterrier.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/AMERICAN_STAFFORDSHIRE_TERRIER%2C_Zican%E2%80%99s_Bz_Ez_Dragon_%2824208348891%29.2.jpg/220px-AMERICAN_STAFFORDSHIRE_TERRIER%2C_Zican%E2%80%99s_Bz_Ez_Dragon_%2824208348891%29.2.jpg",
             "breed_id": 146
         },
@@ -139,6 +145,7 @@
             "reps_lower": 26,
             "reps_upper": 40,
             "origin": "United States",
+            "svg": "https://dogbook.nu/image/americanwaterspaniel.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Chien_d%27eau_americain_champion_1.JPG/220px-Chien_d%27eau_americain_champion_1.JPG",
             "breed_id": 147
         },
@@ -153,6 +160,7 @@
             "reps_lower": 1,
             "reps_upper": 4,
             "origin": "Australia",
+            "svg": "https://dogbook.nu/image/australiancattledog.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/ACD-blue-spud.jpg/220px-ACD-blue-spud.jpg",
             "breed_id": 148
         },
@@ -167,6 +175,7 @@
             "reps_lower": 16,
             "reps_upper": 25,
             "origin": "Australia",
+            "svg": "https://dogbook.nu/image/australianterrier.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Australian_Terrier_adult_male.jpg/220px-Australian_Terrier_adult_male.jpg",
             "breed_id": 150
         },
@@ -181,6 +190,7 @@
             "reps_lower": 81,
             "reps_upper": 100,
             "origin": "Democratic Republic of the Congo",
+            "svg": "https://dogbook.nu/image/basenji.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Basenji_Profile_%28loosercrop%29.jpg/220px-Basenji_Profile_%28loosercrop%29.jpg",
             "breed_id": 151
         },
@@ -195,6 +205,7 @@
             "reps_lower": 81,
             "reps_upper": 100,
             "origin": "United Kingdom",
+            "svg": "https://dogbook.nu/image/bassethound.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/BassetHound_profil.jpg/220px-BassetHound_profil.jpg",
             "breed_id": 152
         },
@@ -209,6 +220,7 @@
             "reps_lower": 81,
             "reps_upper": 100,
             "origin": "England",
+            "svg": "https://dogbook.nu/image/beagle.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Beagle_600.jpg/220px-Beagle_600.jpg",
             "breed_id": 153
         },
@@ -223,6 +235,7 @@
             "reps_lower": 16,
             "reps_upper": 25,
             "origin": "Scotland",
+            "svg": "https://dogbook.nu/image/beardedcollie.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Bearded_Collie_600.jpg/220px-Bearded_Collie_600.jpg",
             "breed_id": 154
         },
@@ -237,6 +250,7 @@
             "reps_lower": 26,
             "reps_upper": 40,
             "origin": "England",
+            "svg": "https://dogbook.nu/image/bedlingtonterrier.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Boutchie_apres_championnat_004.JPG/220px-Boutchie_apres_championnat_004.JPG",
             "breed_id": 155
         },
@@ -251,6 +265,7 @@
             "reps_lower": 5,
             "reps_upper": 15,
             "origin": "Belgium",
+            "svg": "https://dogbook.nu/image/belgianmalinois.svg",
             "img": "https://cdn.britannica.com/85/232785-050-0EE871BE/Belgian-Malinois-dog.jpg",
             "breed_id": 156
         },
@@ -265,6 +280,7 @@
             "reps_lower": 5,
             "reps_upper": 15,
             "origin": "Belgium",
+            "svg": "https://dogbook.nu/image/belgiansheepdog.svg",
             "img": "https://www.thesprucepets.com/thmb/0sW4jcXUZejTqcgEImeO0vLcFUE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-614265774-6ec733d96c5648bfabae304bd0aed1c8.jpg",
             "breed_id": 157
         },
@@ -279,6 +295,7 @@
             "reps_lower": 5,
             "reps_upper": 15,
             "origin": "Switzerland",
+            "svg": "https://dogbook.nu/image/bernesemountaindog.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Othello.jpg/220px-Othello.jpg",
             "breed_id": 158
         },
@@ -293,6 +310,7 @@
             "reps_lower": 26,
             "reps_upper": 40,
             "origin": "Canary Islands",
+            "svg": "https://dogbook.nu/image/bichonfrise.svg",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Bichon_Fris%C3%A9_-_studdogbichon.jpg/220px-Bichon_Fris%C3%A9_-_studdogbichon.jpg",
             "breed_id": 159
         },
